@@ -20,10 +20,14 @@ import com.robert.android.lostpets.presentation.presenters.base.AbstractPresente
  * @see com.robert.android.lostpets.presentation.presenters.AdsPresenter
  * @see com.robert.android.lostpets.domain.interactors.AdsInteractor.Callback
  */
-class AdsPresenterImpl(executor: Executor, mainThread: MainThread,
-                       view: AdsPresenter.View, context: Context, service: AdService)
-    : AbstractPresenter(executor, mainThread), AdsPresenter, AdsInteractor.Callback {
-
+class AdsPresenterImpl(
+    executor: Executor,
+    mainThread: MainThread,
+    view: AdsPresenter.View,
+    context: Context,
+    service: AdService
+) :
+    AbstractPresenter(executor, mainThread), AdsPresenter, AdsInteractor.Callback {
 
     private val mView: AdsPresenter.View = view
     private val mContext: Context = context

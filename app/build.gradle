@@ -62,7 +62,7 @@ android {
             buildConfigField('String', 'LOST_PETS_API', '"http://10.0.2.2:8080/"')
             buildConfigField('String', 'LOST_PETS_MESSAGING', '"ws://10.0.2.2:8080/lostpets-ws/websocket"')
         }
-        AIzaSyBvDwjVLWd1wYUPqs7TGcvvuXkOQnyFKBo
+
         releaseAws {
             testCoverageEnabled false
             minifyEnabled true

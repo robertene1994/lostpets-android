@@ -2,7 +2,7 @@ package com.robert.android.lostpets.network.converter
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import java.util.*
+import java.util.Date
 
 /**
  * Clase que genera una instancia (singleton) para el serializador/deserializador JSON basado en

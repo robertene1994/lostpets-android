@@ -8,13 +8,15 @@ import com.robert.android.lostpets.domain.model.Ad
 import com.robert.android.lostpets.network.service.AdService
 import com.robert.android.lostpets.presentation.presenters.impl.UpdateAdPresenterImpl
 import com.robert.android.lostpets.utilTest.threading.TestMainThread
+import java.io.File
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
-import org.mockito.Mockito.*
+import org.mockito.Mockito.spy
+import org.mockito.Mockito.verify
+import org.mockito.Mockito.verifyNoMoreInteractions
 import org.mockito.junit.MockitoJUnitRunner
-import java.io.File
 
 /**
  * Clase test para la clase UpdateAdPresenterImpl.

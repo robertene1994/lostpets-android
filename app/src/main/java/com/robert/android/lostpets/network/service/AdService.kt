@@ -3,7 +3,12 @@ package com.robert.android.lostpets.network.service
 import com.robert.android.lostpets.domain.model.Ad
 import okhttp3.MultipartBody
 import retrofit2.Call
-import retrofit2.http.*
+import retrofit2.http.GET
+import retrofit2.http.Multipart
+import retrofit2.http.POST
+import retrofit2.http.PUT
+import retrofit2.http.Part
+import retrofit2.http.Path
 
 /**
  * Interfaz que contiene las operaciones de los anuncios de las mascotas perdidas, mediante las

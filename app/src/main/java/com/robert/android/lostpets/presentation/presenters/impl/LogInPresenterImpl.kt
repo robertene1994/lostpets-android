@@ -28,10 +28,15 @@ import com.robert.android.lostpets.presentation.presenters.base.AbstractPresente
  * @see com.robert.android.lostpets.domain.interactors.UserSessionInteractor.Callback
  * @see com.robert.android.lostpets.domain.interactors.LogOutInteractor.Callback
  */
-class LogInPresenterImpl(executor: Executor, mainThread: MainThread,
-                         view: LogInPresenter.View, context: Context,
-                         service: UserService, sessionRepository: SessionRepository)
-    : AbstractPresenter(executor, mainThread), LogInPresenter, LogInInteractor.Callback,
+class LogInPresenterImpl(
+    executor: Executor,
+    mainThread: MainThread,
+    view: LogInPresenter.View,
+    context: Context,
+    service: UserService,
+    sessionRepository: SessionRepository
+) :
+    AbstractPresenter(executor, mainThread), LogInPresenter, LogInInteractor.Callback,
         UserSessionInteractor.Callback, LogOutInteractor.Callback {
 
     private val mView: LogInPresenter.View = view
@@ -57,7 +62,7 @@ class LogInPresenterImpl(executor: Executor, mainThread: MainThread,
 
     override fun checkUserSession() {
         mView.showProgress()
-        UserSessionInteractorImpl(mExecutor, mMainThread,this,
+        UserSessionInteractorImpl(mExecutor, mMainThread, this,
                 mContext, mService, mSessionRepository).execute()
     }
 

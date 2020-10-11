@@ -19,10 +19,15 @@ import retrofit2.Response
  * @see com.robert.android.lostpets.domain.interactors.base.AbstractInteractor
  * @see com.robert.android.lostpets.domain.interactors.UserChatsInteractor
  */
-class UserChatsInteractorImpl(executor: Executor, mainThread: MainThread,
-                              callback: UserChatsInteractor.Callback,
-                              context: Context, service: ChatService, user: User)
-    : AbstractInteractor(executor, mainThread), UserChatsInteractor {
+class UserChatsInteractorImpl(
+    executor: Executor,
+    mainThread: MainThread,
+    callback: UserChatsInteractor.Callback,
+    context: Context,
+    service: ChatService,
+    user: User
+) :
+    AbstractInteractor(executor, mainThread), UserChatsInteractor {
 
     private val mCallback: UserChatsInteractor.Callback = callback
     private val mContext: Context = context

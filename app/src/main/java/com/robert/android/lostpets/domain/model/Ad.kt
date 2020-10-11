@@ -4,20 +4,29 @@ import android.os.Parcel
 import android.os.Parcelable
 import com.robert.android.lostpets.domain.model.types.AdStatus
 import com.robert.android.lostpets.domain.model.types.PetStatus
-import java.util.*
+import java.util.Date
 
-data class Ad(val id: Long?, val code: String?, val date: Date, val adStatus: AdStatus,
-              val petStatus: PetStatus, val reward: Double, val lastSpottedCoords: LatLng,
-              val pet: Pet, val observations: String, val photo: String?, val user: User)
-    : Parcelable {
+data class Ad(
+    val id: Long?,
+    val code: String?,
+    val date: Date,
+    val adStatus: AdStatus,
+    val petStatus: PetStatus,
+    val reward: Double,
+    val lastSpottedCoords: LatLng,
+    val pet: Pet,
+    val observations: String,
+    val photo: String?,
+    val user: User
+) :
+    Parcelable {
 
-    constructor(parcel: Parcel)
-            : this(parcel.readLong(), parcel.readString(), Date(parcel.readLong()),
+    constructor(parcel: Parcel) :
+            this(parcel.readLong(), parcel.readString(), Date(parcel.readLong()),
             AdStatus.values()[parcel.readInt()], PetStatus.values()[parcel.readInt()],
             parcel.readDouble(), parcel.readParcelable<LatLng>(LatLng::class.java.classLoader)!!,
             parcel.readParcelable<Pet>(Pet::class.java.classLoader)!!, parcel.readString()!!,
             parcel.readString(), parcel.readParcelable<User>(User::class.java.classLoader)!!)
-
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true

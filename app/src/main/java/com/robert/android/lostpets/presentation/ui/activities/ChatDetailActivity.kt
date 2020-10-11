@@ -28,10 +28,10 @@ import com.robert.android.lostpets.presentation.ui.notifications.NotificationsMa
 import com.robert.android.lostpets.presentation.ui.utils.CodeGeneratorUtil
 import com.robert.android.lostpets.presentation.ui.utils.SnackbarUtil
 import com.robert.android.lostpets.threading.MainThreadImpl
+import java.util.Date
 import kotlinx.android.synthetic.main.activity_chat_detail.*
 import kotlinx.android.synthetic.main.app_bar.*
 import kotlinx.android.synthetic.main.progress_bar.*
-import java.util.*
 
 /**
  * Activity que extiende la clase AbstractActivity e implementa la interfaz del callback del

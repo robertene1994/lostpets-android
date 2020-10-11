@@ -2,7 +2,8 @@ package com.robert.android.lostpets.network.service
 
 import com.robert.android.lostpets.domain.model.Chat
 import retrofit2.Call
-import retrofit2.http.*
+import retrofit2.http.GET
+import retrofit2.http.Path
 
 /**
  * Interfaz que contiene las operaciones de los chats, mediante las cuales la aplicación se

@@ -2,6 +2,7 @@ package com.robert.android.lostpets.domain.interactors
 
 import com.robert.android.lostpets.domain.interactors.impl.GetLanguageSynchronousInteractorImpl
 import com.robert.android.lostpets.domain.repository.SettingsRepository
+import java.util.Locale
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -9,7 +10,6 @@ import org.mockito.Mock
 import org.mockito.Mockito.`when`
 import org.mockito.Mockito.verify
 import org.mockito.junit.MockitoJUnitRunner
-import java.util.*
 
 /**
  * Clase test para la clase GetLanguageSynchronousInteractorImpl.

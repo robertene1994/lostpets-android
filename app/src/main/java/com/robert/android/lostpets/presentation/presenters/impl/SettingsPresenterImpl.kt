@@ -14,8 +14,7 @@ import com.robert.android.lostpets.domain.repository.SettingsRepository
 import com.robert.android.lostpets.presentation.presenters.SettingsPresenter
 import com.robert.android.lostpets.presentation.presenters.base.AbstractPresenter
 import com.robert.android.lostpets.utils.ContextWrapper
-import java.util.*
-
+import java.util.Locale
 
 /**
  * Clase que extiende la clase AbstractPresenter e implementa la interfaz SettingsPresenter.
@@ -28,10 +27,14 @@ import java.util.*
  * @see com.robert.android.lostpets.domain.interactors.GetLanguageInteractor.Callback
  * @see com.robert.android.lostpets.domain.interactors.SaveSettingsInteractor.Callback
  */
-class SettingsPresenterImpl(executor: Executor, mainThread: MainThread,
-                            view: SettingsPresenter.View, context: Context,
-                            settingsRepository: SettingsRepository)
-    : AbstractPresenter(executor, mainThread), SettingsPresenter, GetLanguageInteractor.Callback,
+class SettingsPresenterImpl(
+    executor: Executor,
+    mainThread: MainThread,
+    view: SettingsPresenter.View,
+    context: Context,
+    settingsRepository: SettingsRepository
+) :
+    AbstractPresenter(executor, mainThread), SettingsPresenter, GetLanguageInteractor.Callback,
         SaveSettingsInteractor.Callback {
 
     private var mView: SettingsPresenter.View? = view

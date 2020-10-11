@@ -1,6 +1,5 @@
 package com.robert.android.lostpets.presentation.ui.broadcasts
 
-
 /**
  * Interfaz que extiende la interfaz MessageReceiver. Su función consiste en transmitir
  * mensajes a los componentes que se encuentran suscritos.

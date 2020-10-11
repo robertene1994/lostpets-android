@@ -11,10 +11,10 @@ import com.robert.android.lostpets.domain.executor.MainThread
  * @author Robert Ene
  * @see com.robert.android.lostpets.domain.executor.MainThread
  */
-class MainThreadImpl: MainThread {
+class MainThreadImpl : MainThread {
 
     companion object {
-        val instance: MainThread by lazy { MainThreadImpl()  }
+        val instance: MainThread by lazy { MainThreadImpl() }
     }
 
     private val mHandler: Handler = Handler(Looper.getMainLooper())

@@ -5,16 +5,19 @@ import com.robert.android.lostpets.domain.executor.Executor
 import com.robert.android.lostpets.domain.executor.MainThread
 import com.robert.android.lostpets.domain.interactors.impl.ProcessImageInteractorImpl
 import com.robert.android.lostpets.utilTest.threading.TestMainThread
+import java.io.File
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
-import org.mockito.Mockito.*
+import org.mockito.Mockito.mock
+import org.mockito.Mockito.spy
+import org.mockito.Mockito.verify
+import org.mockito.Mockito.verifyNoMoreInteractions
 import org.mockito.MockitoAnnotations
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.RuntimeEnvironment
 import org.robolectric.annotation.Config
-import java.io.File
 
 /**
  * Clase test para la clase ProcessImageInteractorImpl.

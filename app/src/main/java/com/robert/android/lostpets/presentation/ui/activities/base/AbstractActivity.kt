@@ -6,7 +6,7 @@ import android.view.View
 import com.robert.android.lostpets.presentation.presenters.impl.LanguagePresenterImpl
 import com.robert.android.lostpets.storage.SettingsRepositoryImpl
 import com.robert.android.lostpets.utils.ContextWrapper
-import java.util.*
+import java.util.Locale
 
 /**
  * Clase base abstracta para todas las activities que sirve como punto común para los accesos al

@@ -13,7 +13,12 @@ import com.robert.android.lostpets.domain.model.User
 import com.robert.android.lostpets.presentation.presenters.MainPresenter
 import com.robert.android.lostpets.presentation.presenters.impl.MainPresenterImpl
 import com.robert.android.lostpets.presentation.ui.activities.base.AbstractActivity
-import com.robert.android.lostpets.presentation.ui.fragments.*
+import com.robert.android.lostpets.presentation.ui.fragments.AddAdFragment
+import com.robert.android.lostpets.presentation.ui.fragments.AdsFragment
+import com.robert.android.lostpets.presentation.ui.fragments.SettingsFragment
+import com.robert.android.lostpets.presentation.ui.fragments.UpdateAdFragment
+import com.robert.android.lostpets.presentation.ui.fragments.UserAdsFragment
+import com.robert.android.lostpets.presentation.ui.fragments.UserChatsFragment
 import com.robert.android.lostpets.presentation.ui.utils.SnackbarUtil
 import com.robert.android.lostpets.storage.SessionRepositoryImpl
 import com.robert.android.lostpets.threading.MainThreadImpl

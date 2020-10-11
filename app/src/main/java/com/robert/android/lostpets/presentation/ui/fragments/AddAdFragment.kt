@@ -33,8 +33,8 @@ import com.robert.android.lostpets.domain.model.LatLng
 import com.robert.android.lostpets.domain.model.Pet
 import com.robert.android.lostpets.domain.model.User
 import com.robert.android.lostpets.domain.model.types.AdStatus
-import com.robert.android.lostpets.domain.model.types.Sex
 import com.robert.android.lostpets.domain.model.types.PetStatus
+import com.robert.android.lostpets.domain.model.types.Sex
 import com.robert.android.lostpets.network.ServiceGenerator
 import com.robert.android.lostpets.network.service.AdService
 import com.robert.android.lostpets.presentation.presenters.AddAdPresenter
@@ -48,10 +48,11 @@ import com.robert.android.lostpets.threading.MainThreadImpl
 import com.squareup.picasso.MemoryPolicy
 import com.squareup.picasso.NetworkPolicy
 import com.squareup.picasso.Picasso
+import java.io.File
+import java.util.Calendar
+import java.util.Date
 import kotlinx.android.synthetic.main.fragment_add_ad.*
 import kotlinx.android.synthetic.main.progress_bar.*
-import java.io.File
-import java.util.*
 
 /**
  * Fragment que extiende la clase AbstractFragment e implementa la interfaz del callback del
@@ -104,8 +105,11 @@ class AddAdFragment : AbstractFragment(), AddAdPresenter.View, OnMapReadyCallbac
     private var mFile: File? = null
     private var mUri: Uri? = null
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         return inflater.inflate(R.layout.fragment_add_ad, container, false)
     }
 
@@ -147,8 +151,11 @@ class AddAdFragment : AbstractFragment(), AddAdPresenter.View, OnMapReadyCallbac
         }
     }
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>,
-                                            grantResults: IntArray) {
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         when (requestCode) {
             REQUEST_LOCATION_PERMISSIONS -> {
@@ -269,8 +276,8 @@ class AddAdFragment : AbstractFragment(), AddAdPresenter.View, OnMapReadyCallbac
         } else {
             mMap.isMyLocationEnabled = true
             mMap.uiSettings.isMyLocationButtonEnabled = true
-            val locationManager
-                    = context.getSystemService(LOCATION_SERVICE) as LocationManager
+            val locationManager =
+                    context.getSystemService(LOCATION_SERVICE) as LocationManager
             val location = locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER)
 
             val latLng =
@@ -289,13 +296,13 @@ class AddAdFragment : AbstractFragment(), AddAdPresenter.View, OnMapReadyCallbac
     }
 
     private fun onClickSelectDate() {
-        val datePickerFragment= DatePickerFragment.newInstance()
+        val datePickerFragment = DatePickerFragment.newInstance()
         datePickerFragment.setTargetFragment(this, REQUEST_DATE_PICKER)
         datePickerFragment.show(fragmentManager, DIALOG_DATE_PICKER)
     }
 
     private fun onClickSelectTime() {
-        val timePickerFragment= TimePickerFragment.newInstance()
+        val timePickerFragment = TimePickerFragment.newInstance()
         timePickerFragment.setTargetFragment(this, REQUEST_TIME_PICKER)
         timePickerFragment.show(fragmentManager, DIALOG_TIME_PICKER)
     }
@@ -400,7 +407,7 @@ class AddAdFragment : AbstractFragment(), AddAdPresenter.View, OnMapReadyCallbac
     }
 
     private fun validateLastSpottedLocation(): Boolean {
-        return when (mMarker){
+        return when (mMarker) {
             null -> {
                 SnackbarUtil.makeShort(fragmentAddAdLayout, R.string
                         .msg_last_spotted_location_required)
@@ -463,7 +470,7 @@ class AddAdFragment : AbstractFragment(), AddAdPresenter.View, OnMapReadyCallbac
     }
 
     private fun validateSex(): Boolean {
-        return when (mSex){
+        return when (mSex) {
             null -> {
                 SnackbarUtil.makeShort(fragmentAddAdLayout, R.string.msg_sex_required)
                 false

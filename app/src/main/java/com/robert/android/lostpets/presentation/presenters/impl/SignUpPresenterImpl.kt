@@ -23,9 +23,14 @@ import com.robert.android.lostpets.presentation.presenters.base.AbstractPresente
  * @see com.robert.android.lostpets.domain.interactors.CheckUniqueEmailInteractor.Callback
  * @see com.robert.android.lostpets.domain.interactors.SignUpInteractor.Callback
  */
-class SignUpPresenterImpl(executor: Executor, mainThread: MainThread, view: SignUpPresenter.View,
-                          context: Context, service: UserService)
-    : AbstractPresenter(executor, mainThread), SignUpPresenter,
+class SignUpPresenterImpl(
+    executor: Executor,
+    mainThread: MainThread,
+    view: SignUpPresenter.View,
+    context: Context,
+    service: UserService
+) :
+    AbstractPresenter(executor, mainThread), SignUpPresenter,
         CheckUniqueEmailInteractor.Callback, SignUpInteractor.Callback {
 
     private val mView: SignUpPresenter.View = view

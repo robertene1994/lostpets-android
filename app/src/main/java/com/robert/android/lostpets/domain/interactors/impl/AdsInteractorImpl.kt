@@ -18,10 +18,14 @@ import retrofit2.Response
  * @see com.robert.android.lostpets.domain.interactors.base.AbstractInteractor
  * @see com.robert.android.lostpets.domain.interactors.AdsInteractor
  */
-class AdsInteractorImpl(executor: Executor, mainThread: MainThread,
-                        callback: AdsInteractor.Callback,
-                        context: Context, service: AdService)
-    : AbstractInteractor(executor, mainThread), AdsInteractor {
+class AdsInteractorImpl(
+    executor: Executor,
+    mainThread: MainThread,
+    callback: AdsInteractor.Callback,
+    context: Context,
+    service: AdService
+) :
+    AbstractInteractor(executor, mainThread), AdsInteractor {
 
     private val mCallback: AdsInteractor.Callback = callback
     private val mContext: Context = context

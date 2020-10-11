@@ -57,8 +57,11 @@ class AdsFragment : AbstractFragment(), AdsPresenter.View {
     private lateinit var mAdsPresenter: AdsPresenter
     private lateinit var mUser: User
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         return inflater.inflate(R.layout.fragment_ads, container, false)
     }
 

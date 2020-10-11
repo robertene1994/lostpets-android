@@ -5,6 +5,7 @@ import com.robert.android.lostpets.domain.executor.MainThread
 import com.robert.android.lostpets.domain.interactors.impl.GetLanguageInteractorImpl
 import com.robert.android.lostpets.domain.repository.SettingsRepository
 import com.robert.android.lostpets.utilTest.threading.TestMainThread
+import java.util.Locale
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -12,7 +13,6 @@ import org.mockito.Mock
 import org.mockito.Mockito.`when`
 import org.mockito.Mockito.verify
 import org.mockito.junit.MockitoJUnitRunner
-import java.util.*
 
 /**
  * Clase test para la clase GetLanguageInteractorImpl.

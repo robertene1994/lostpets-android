@@ -17,10 +17,13 @@ import ua.naiksoftware.stomp.dto.LifecycleEvent
  * @see com.robert.android.lostpets.domain.interactors.base.AbstractInteractor
  * @see com.robert.android.lostpets.domain.interactors.HandleStompConnectionInteractor
  */
-class HandleStompConnectionInteractorImpl(executor: Executor, mainThread: MainThread,
-                                          stompClient: StompClient,
-                                          callback: HandleStompConnectionInteractor.Callback)
-    : AbstractInteractor(executor, mainThread), HandleStompConnectionInteractor {
+class HandleStompConnectionInteractorImpl(
+    executor: Executor,
+    mainThread: MainThread,
+    stompClient: StompClient,
+    callback: HandleStompConnectionInteractor.Callback
+) :
+    AbstractInteractor(executor, mainThread), HandleStompConnectionInteractor {
 
     private val mStompClient: StompClient = stompClient
     private var mCallback: HandleStompConnectionInteractor.Callback = callback

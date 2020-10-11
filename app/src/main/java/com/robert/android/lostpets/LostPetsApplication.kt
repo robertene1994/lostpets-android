@@ -7,7 +7,7 @@ import com.robert.android.lostpets.presentation.presenters.impl.LanguagePresente
 import com.robert.android.lostpets.presentation.ui.notifications.NotificationsManager
 import com.robert.android.lostpets.storage.SettingsRepositoryImpl
 import com.robert.android.lostpets.utils.ContextWrapper
-import java.util.*
+import java.util.Locale
 
 /**
  * Punto de entrada para la aplicación LostPets.

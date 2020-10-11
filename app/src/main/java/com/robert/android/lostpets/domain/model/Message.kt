@@ -3,12 +3,19 @@ package com.robert.android.lostpets.domain.model
 import android.os.Parcel
 import android.os.Parcelable
 import com.robert.android.lostpets.domain.model.types.MessageStatus
-import java.util.*
+import java.util.Date
 
-data class Message(val id: Long?, var code: String?, var content: String?, var date: Date,
-                   var messageStatus: MessageStatus, var fromUser: User,
-                   var toUser: User, var chat: Chat?)
-    : Parcelable {
+data class Message(
+    val id: Long?,
+    var code: String?,
+    var content: String?,
+    var date: Date,
+    var messageStatus: MessageStatus,
+    var fromUser: User,
+    var toUser: User,
+    var chat: Chat?
+) :
+    Parcelable {
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
@@ -23,8 +30,8 @@ data class Message(val id: Long?, var code: String?, var content: String?, var d
         return code?.hashCode() ?: 0
     }
 
-    constructor(parcel: Parcel)
-            : this(
+    constructor(parcel: Parcel) :
+            this(
             parcel.readValue(Long::class.java.classLoader) as Long?,
             parcel.readString(),
             parcel.readString(), Date(parcel.readLong()),

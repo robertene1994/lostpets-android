@@ -8,12 +8,12 @@ import com.robert.android.lostpets.domain.interactors.base.AbstractInteractor
 import com.robert.android.lostpets.domain.model.Ad
 import com.robert.android.lostpets.domain.utils.ConnectivityStatus
 import com.robert.android.lostpets.network.service.AdService
+import java.io.File
 import okhttp3.MediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Response
-import java.io.File
 
 /**
  * Clase que extiende la clase AbstractInteractor e implementa la interfaz AddAdInteractor.
@@ -22,10 +22,16 @@ import java.io.File
  * @see com.robert.android.lostpets.domain.interactors.base.AbstractInteractor
  * @see com.robert.android.lostpets.domain.interactors.AddAdInteractor
  */
-class AddAdInteractorImpl(executor: Executor, mainThread: MainThread,
-                          callback: AddAdInteractor.Callback,
-                          context: Context, service: AdService, ad: Ad, file: File)
-    : AbstractInteractor(executor, mainThread), AddAdInteractor {
+class AddAdInteractorImpl(
+    executor: Executor,
+    mainThread: MainThread,
+    callback: AddAdInteractor.Callback,
+    context: Context,
+    service: AdService,
+    ad: Ad,
+    file: File
+) :
+    AbstractInteractor(executor, mainThread), AddAdInteractor {
 
     private val mCallback: AddAdInteractor.Callback = callback
     private val mContext: Context = context

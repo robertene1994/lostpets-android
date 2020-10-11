@@ -30,8 +30,8 @@ import com.robert.android.lostpets.domain.model.Ad
 import com.robert.android.lostpets.domain.model.LatLng
 import com.robert.android.lostpets.domain.model.Pet
 import com.robert.android.lostpets.domain.model.User
-import com.robert.android.lostpets.domain.model.types.Sex
 import com.robert.android.lostpets.domain.model.types.PetStatus
+import com.robert.android.lostpets.domain.model.types.Sex
 import com.robert.android.lostpets.network.ServiceGenerator
 import com.robert.android.lostpets.network.service.AdService
 import com.robert.android.lostpets.presentation.presenters.UpdateAdPresenter
@@ -44,10 +44,11 @@ import com.robert.android.lostpets.presentation.ui.utils.SnackbarUtil
 import com.robert.android.lostpets.threading.MainThreadImpl
 import com.squareup.picasso.MemoryPolicy
 import com.squareup.picasso.Picasso
+import java.io.File
+import java.util.Calendar
+import java.util.Date
 import kotlinx.android.synthetic.main.fragment_update_ad.*
 import kotlinx.android.synthetic.main.progress_bar.*
-import java.io.File
-import java.util.*
 
 /**
  * Fragment que extiende la clase AbstractFragment e implementa la interfaz del callback del
@@ -106,8 +107,11 @@ class UpdateAdFragment : AbstractFragment(), UpdateAdPresenter.View, OnMapReadyC
     private var mFile: File? = null
     private var mUri: Uri? = null
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         return inflater.inflate(R.layout.fragment_update_ad, container, false)
     }
 
@@ -149,8 +153,11 @@ class UpdateAdFragment : AbstractFragment(), UpdateAdPresenter.View, OnMapReadyC
         }
     }
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>,
-                                            grantResults: IntArray) {
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         when (requestCode) {
             REQUEST_LOCATION_PERMISSIONS -> {
@@ -337,13 +344,13 @@ class UpdateAdFragment : AbstractFragment(), UpdateAdPresenter.View, OnMapReadyC
     }
 
     private fun onClickSelectDate() {
-        val datePickerFragment= DatePickerFragment.newInstance()
+        val datePickerFragment = DatePickerFragment.newInstance()
         datePickerFragment.setTargetFragment(this, REQUEST_DATE_PICKER)
         datePickerFragment.show(fragmentManager, DIALOG_DATE_PICKER)
     }
 
     private fun onClickSelectTime() {
-        val timePickerFragment= TimePickerFragment.newInstance()
+        val timePickerFragment = TimePickerFragment.newInstance()
         timePickerFragment.setTargetFragment(this, REQUEST_TIME_PICKER)
         timePickerFragment.show(fragmentManager, DIALOG_TIME_PICKER)
     }
@@ -379,9 +386,9 @@ class UpdateAdFragment : AbstractFragment(), UpdateAdPresenter.View, OnMapReadyC
         val validColour = validateColour(colour)
         val validMicrochipId = validateMicrochipId(microchipId)
 
-        if (validImage && validPetStatus && validReward && validDate && validTime
-                && validObservations && validLastSpottedLocation && validName && validType
-                && validRace && validSex && validColour && validMicrochipId) {
+        if (validImage && validPetStatus && validReward && validDate && validTime &&
+                validObservations && validLastSpottedLocation && validName && validType &&
+                validRace && validSex && validColour && validMicrochipId) {
             val pet = Pet(name, type, race, mSex!!, colour, microchipId)
             val ad = Ad(id, code, mCalendar.time, adStatus, mPetStatus!!, reward.toDouble(),
                     LatLng(mMarker!!.position.latitude, mMarker!!.position.longitude), pet,
@@ -405,7 +412,7 @@ class UpdateAdFragment : AbstractFragment(), UpdateAdPresenter.View, OnMapReadyC
     }
 
     private fun validatePetStatus(): Boolean {
-        return when (mPetStatus){
+        return when (mPetStatus) {
             null -> {
                 SnackbarUtil.makeShort(fragmentUpdateAdLayout, R.string.msg_status_required)
                 false
@@ -433,7 +440,7 @@ class UpdateAdFragment : AbstractFragment(), UpdateAdPresenter.View, OnMapReadyC
 
     private fun validateDate(date: String): Boolean {
         return when {
-            date.isEmpty()-> {
+            date.isEmpty() -> {
                 updateAdDateTextInputLayout.error = getString(R.string.msg_date_required)
                 false
             }
@@ -446,7 +453,7 @@ class UpdateAdFragment : AbstractFragment(), UpdateAdPresenter.View, OnMapReadyC
 
     private fun validateTime(time: String): Boolean {
         return when {
-            time.isEmpty()-> {
+            time.isEmpty() -> {
                 updateAdTimeTextInputLayout.error = getString(R.string.msg_time_required)
                 false
             }
@@ -475,7 +482,7 @@ class UpdateAdFragment : AbstractFragment(), UpdateAdPresenter.View, OnMapReadyC
     }
 
     private fun validateLastSpottedLocation(): Boolean {
-        return when (mMarker){
+        return when (mMarker) {
             null -> {
                 SnackbarUtil.makeShort(fragmentUpdateAdLayout, R.string
                         .msg_last_spotted_location_required)
@@ -525,7 +532,7 @@ class UpdateAdFragment : AbstractFragment(), UpdateAdPresenter.View, OnMapReadyC
     }
 
     private fun validateSex(): Boolean {
-        return when (mSex){
+        return when (mSex) {
             null -> {
                 SnackbarUtil.makeShort(fragmentUpdateAdLayout, R.string.msg_sex_required)
                 false

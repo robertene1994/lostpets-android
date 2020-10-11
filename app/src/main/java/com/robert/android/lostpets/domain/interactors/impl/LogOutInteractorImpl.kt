@@ -13,10 +13,13 @@ import com.robert.android.lostpets.domain.repository.SessionRepository
  * @see com.robert.android.lostpets.domain.interactors.base.AbstractInteractor
  * @see com.robert.android.lostpets.domain.interactors.LogOutInteractor
  */
-class LogOutInteractorImpl(executor: Executor, mainThread: MainThread,
-                           callback: LogOutInteractor.Callback,
-                           sessionRepository: SessionRepository)
-    : AbstractInteractor(executor, mainThread), LogOutInteractor {
+class LogOutInteractorImpl(
+    executor: Executor,
+    mainThread: MainThread,
+    callback: LogOutInteractor.Callback,
+    sessionRepository: SessionRepository
+) :
+    AbstractInteractor(executor, mainThread), LogOutInteractor {
 
     private val mCallback: LogOutInteractor.Callback = callback
     private val mSessionRepository: SessionRepository = sessionRepository

@@ -20,11 +20,15 @@ import retrofit2.Response
  * @see com.robert.android.lostpets.domain.interactors.base.AbstractInteractor
  * @see com.robert.android.lostpets.domain.interactors.UserSessionInteractor
  */
-class UserSessionInteractorImpl(executor: Executor, mainThread: MainThread,
-                                callback: UserSessionInteractor.Callback,
-                                context: Context, service: UserService,
-                                sessionRepository: SessionRepository)
-    : AbstractInteractor(executor, mainThread), UserSessionInteractor {
+class UserSessionInteractorImpl(
+    executor: Executor,
+    mainThread: MainThread,
+    callback: UserSessionInteractor.Callback,
+    context: Context,
+    service: UserService,
+    sessionRepository: SessionRepository
+) :
+    AbstractInteractor(executor, mainThread), UserSessionInteractor {
 
     private val mCallback: UserSessionInteractor.Callback = callback
     private val mContext: Context = context

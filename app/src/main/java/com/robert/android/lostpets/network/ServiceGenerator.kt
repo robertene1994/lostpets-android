@@ -3,13 +3,12 @@ package com.robert.android.lostpets.network
 import android.content.Context
 import com.robert.android.lostpets.BuildConfig
 import com.robert.android.lostpets.network.converter.GsonSerializer
-import com.robert.android.lostpets.network.converter.NullOrEmptyConverterFactory
 import com.robert.android.lostpets.network.security.AuthenticationInterceptor
+import java.util.concurrent.TimeUnit
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
-import java.util.concurrent.TimeUnit
 
 /**
  * Clase que genera los servicios de la API disponibles para los usuarios.

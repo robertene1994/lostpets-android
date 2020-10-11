@@ -10,7 +10,9 @@ import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
-import org.mockito.Mockito.*
+import org.mockito.Mockito.spy
+import org.mockito.Mockito.verify
+import org.mockito.Mockito.verifyNoMoreInteractions
 import org.mockito.MockitoAnnotations
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.RuntimeEnvironment
@@ -48,7 +50,7 @@ class MainPresenterTest {
     @Throws(Exception::class)
     fun testUserRetrieved() {
         val presenter = MainPresenterImpl(mExecutor, mMainThread, mCallback,
-                RuntimeEnvironment.application,mSessionRepository)
+                RuntimeEnvironment.application, mSessionRepository)
         presenter.getUser()
 
         spy(presenter).pause()
@@ -67,7 +69,7 @@ class MainPresenterTest {
     @Throws(Exception::class)
     fun testLogOut() {
         val presenter = MainPresenterImpl(mExecutor, mMainThread, mCallback,
-                RuntimeEnvironment.application,mSessionRepository)
+                RuntimeEnvironment.application, mSessionRepository)
         presenter.logOut()
 
         spy(presenter).onLogOut()
@@ -82,7 +84,7 @@ class MainPresenterTest {
     @Throws(Exception::class)
     fun testNoInternetConnection() {
         val presenter = MainPresenterImpl(mExecutor, mMainThread, mCallback,
-                RuntimeEnvironment.application,mSessionRepository)
+                RuntimeEnvironment.application, mSessionRepository)
         presenter.getUser()
 
         spy(presenter).onNoInternetConnection()
@@ -97,7 +99,7 @@ class MainPresenterTest {
     @Throws(Exception::class)
     fun testServiceNotAvailable() {
         val presenter = MainPresenterImpl(mExecutor, mMainThread, mCallback,
-                RuntimeEnvironment.application,mSessionRepository)
+                RuntimeEnvironment.application, mSessionRepository)
         presenter.getUser()
 
         spy(presenter).onServiceNotAvailable()

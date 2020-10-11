@@ -1,7 +1,7 @@
 package com.robert.android.lostpets.presentation.ui.utils
 
 import java.security.SecureRandom
-import java.util.*
+import java.util.Random
 
 /**
  * Clase de utilidades que permite generar códigos alfanuméricos aleatorios.

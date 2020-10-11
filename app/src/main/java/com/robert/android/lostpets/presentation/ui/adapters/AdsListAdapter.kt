@@ -18,20 +18,23 @@ import com.robert.android.lostpets.presentation.ui.fragments.UpdateAdFragment
 import com.squareup.picasso.MemoryPolicy
 import com.squareup.picasso.NetworkPolicy
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.card_ad_item.view.*
 import java.text.DateFormat
-import java.util.*
+import java.util.Date
+import java.util.Locale
+import kotlinx.android.synthetic.main.card_ad_item.view.*
 
 /**
  * Clase adapter que se tiene la función de mostrar los anuncios de mascotas perdidas.
  *
  * @author Robert Ene
  */
-class AdsListAdapter(private val items: List<Ad>,
-                     private val user: User,
-                     private val fragmentManager: FragmentManager?,
-                     private val itemClick: (Ad) -> Unit)
-    : RecyclerView.Adapter<AdsListAdapter.ViewHolder>() {
+class AdsListAdapter(
+    private val items: List<Ad>,
+    private val user: User,
+    private val fragmentManager: FragmentManager?,
+    private val itemClick: (Ad) -> Unit
+) :
+    RecyclerView.Adapter<AdsListAdapter.ViewHolder>() {
 
     companion object {
 
@@ -75,11 +78,13 @@ class AdsListAdapter(private val items: List<Ad>,
      *
      * @author Robert Ene
      */
-    class ViewHolder(cardView: CardView,
-                     private val user: User,
-                     private val fragmentManager: FragmentManager?,
-                     private val itemClick: (Ad) -> Unit)
-        : RecyclerView.ViewHolder(cardView) {
+    class ViewHolder(
+        cardView: CardView,
+        private val user: User,
+        private val fragmentManager: FragmentManager?,
+        private val itemClick: (Ad) -> Unit
+    ) :
+        RecyclerView.ViewHolder(cardView) {
 
         /**
          * Método que se encarga de enlazar los detalles de un determinado anuncio de mascota

@@ -8,7 +8,7 @@ import com.robert.android.lostpets.domain.executor.MainThread
  *
  * @author Robert Ene
  */
-abstract class AbstractInteractor(executor: Executor, mainThread: MainThread): Interactor {
+abstract class AbstractInteractor(executor: Executor, mainThread: MainThread) : Interactor {
 
     private val mExecutor: Executor = executor
     protected val mMainThread: MainThread = mainThread

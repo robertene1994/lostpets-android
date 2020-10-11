@@ -22,12 +22,17 @@ import retrofit2.Response
  * @see com.robert.android.lostpets.domain.interactors.base.AbstractInteractor
  * @see com.robert.android.lostpets.domain.interactors.LogInInteractor
  */
-class LogInInteractorImpl(executor: Executor, mainThread: MainThread,
-                          callback: LogInInteractor.Callback,
-                          context: Context, service: UserService,
-                          sessionRepository: SessionRepository,
-                          email: String, password: String)
-    : AbstractInteractor(executor, mainThread), LogInInteractor {
+class LogInInteractorImpl(
+    executor: Executor,
+    mainThread: MainThread,
+    callback: LogInInteractor.Callback,
+    context: Context,
+    service: UserService,
+    sessionRepository: SessionRepository,
+    email: String,
+    password: String
+) :
+    AbstractInteractor(executor, mainThread), LogInInteractor {
 
     private val mCallback: LogInInteractor.Callback = callback
     private val mContext: Context = context

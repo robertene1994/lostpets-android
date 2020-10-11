@@ -4,7 +4,7 @@ import android.app.Dialog
 import android.app.TimePickerDialog
 import android.os.Bundle
 import android.support.v4.app.DialogFragment
-import java.util.*
+import java.util.Calendar
 
 /**
  * Fragment que se encarga de manejar la vista correspondiente a la opción mediante la cuál el
@@ -22,7 +22,7 @@ class TimePickerFragment : DialogFragment() {
          *
          * @return el fragment creado e instanciado para la vista correspondiente.
          */
-         fun newInstance(): TimePickerFragment {
+        fun newInstance(): TimePickerFragment {
             return TimePickerFragment()
         }
     }

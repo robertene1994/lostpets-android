@@ -25,10 +25,14 @@ import java.io.File
  * @see com.robert.android.lostpets.domain.interactors.ProcessImageInteractor.Callback
  * @see com.robert.android.lostpets.domain.interactors.UpdateAdInteractor.Callback
  */
-class UpdateAdPresenterImpl(executor: Executor, mainThread: MainThread,
-                            view: UpdateAdPresenter.View, context: Context,
-                            service: AdService)
-    : AbstractPresenter(executor, mainThread), UpdateAdPresenter, ProcessImageInteractor.Callback,
+class UpdateAdPresenterImpl(
+    executor: Executor,
+    mainThread: MainThread,
+    view: UpdateAdPresenter.View,
+    context: Context,
+    service: AdService
+) :
+    AbstractPresenter(executor, mainThread), UpdateAdPresenter, ProcessImageInteractor.Callback,
         UpdateAdInteractor.Callback {
 
     private val mView: UpdateAdPresenter.View = view

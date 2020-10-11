@@ -5,7 +5,8 @@ import com.google.gson.JsonDeserializer
 import com.google.gson.JsonElement
 import java.lang.reflect.Type
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Date
+import java.util.Locale
 
 /**
  * Clase que extiende la clase JsonDeserializer. Su función consiste en manejar la deserialización
@@ -18,8 +19,11 @@ class DateDeserializer : JsonDeserializer<Date> {
     private val mDateFormat: SimpleDateFormat = SimpleDateFormat(
             "MMM dd, yyyy HH:mm:ss", Locale.ENGLISH)
 
-    override fun deserialize(json: JsonElement, typeOfT: Type,
-                             context: JsonDeserializationContext): Date {
+    override fun deserialize(
+        json: JsonElement,
+        typeOfT: Type,
+        context: JsonDeserializationContext
+    ): Date {
 
         return if (json.asString.toLongOrNull() != null)
             Date(json.asLong)

@@ -23,10 +23,14 @@ import com.robert.android.lostpets.presentation.presenters.base.AbstractPresente
  * @see com.robert.android.lostpets.domain.interactors.GetUserInteractor.Callback
  * @see com.robert.android.lostpets.domain.interactors.LogOutInteractor.Callback
  */
-class MainPresenterImpl(executor: Executor, mainThread: MainThread,
-                        view: MainPresenter.View, context: Context,
-                        sessionRepository: SessionRepository)
-    : AbstractPresenter(executor, mainThread), MainPresenter, GetUserInteractor.Callback,
+class MainPresenterImpl(
+    executor: Executor,
+    mainThread: MainThread,
+    view: MainPresenter.View,
+    context: Context,
+    sessionRepository: SessionRepository
+) :
+    AbstractPresenter(executor, mainThread), MainPresenter, GetUserInteractor.Callback,
         LogOutInteractor.Callback {
 
     private val mView: MainPresenter.View = view

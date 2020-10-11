@@ -21,10 +21,15 @@ import com.robert.android.lostpets.presentation.presenters.base.AbstractPresente
  * @see com.robert.android.lostpets.presentation.presenters.UserAdsPresenter
  * @see com.robert.android.lostpets.domain.interactors.UserAdsInteractor.Callback
  */
-class UserAdsPresenterImpl(executor: Executor, mainThread: MainThread,
-                           view: UserAdsPresenter.View, context: Context,
-                           service: AdService, user: User)
-    : AbstractPresenter(executor, mainThread), UserAdsPresenter, UserAdsInteractor.Callback {
+class UserAdsPresenterImpl(
+    executor: Executor,
+    mainThread: MainThread,
+    view: UserAdsPresenter.View,
+    context: Context,
+    service: AdService,
+    user: User
+) :
+    AbstractPresenter(executor, mainThread), UserAdsPresenter, UserAdsInteractor.Callback {
 
     private val mView: UserAdsPresenter.View = view
     private val mContext: Context = context
@@ -49,7 +54,7 @@ class UserAdsPresenterImpl(executor: Executor, mainThread: MainThread,
 
     override fun getUserAds() {
         mView.showProgress()
-        UserAdsInteractorImpl(mExecutor, mMainThread,this,
+        UserAdsInteractorImpl(mExecutor, mMainThread, this,
                 mContext, mService, mUser).execute()
     }
 

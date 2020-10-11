@@ -9,7 +9,9 @@ import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
-import org.mockito.Mockito.*
+import org.mockito.Mockito.spy
+import org.mockito.Mockito.verify
+import org.mockito.Mockito.verifyNoMoreInteractions
 import org.mockito.MockitoAnnotations
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.RuntimeEnvironment
@@ -33,7 +35,6 @@ class SettingsPresenterTest {
     private lateinit var mSettingsRepository: SettingsRepository
 
     private lateinit var mMainThread: MainThread
-
 
     @Before
     @Throws(Exception::class)

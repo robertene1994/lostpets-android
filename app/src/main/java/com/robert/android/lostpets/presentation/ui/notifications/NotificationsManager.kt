@@ -1,7 +1,12 @@
 package com.robert.android.lostpets.presentation.ui.notifications
 
 import android.annotation.SuppressLint
-import android.app.*
+import android.app.Notification
+import android.app.NotificationChannel
+import android.app.NotificationChannelGroup
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.app.TaskStackBuilder
 import android.content.Context
 import android.content.Intent
 import android.graphics.BitmapFactory
@@ -129,14 +134,16 @@ class NotificationsManager {
             }
         }
 
-        private fun addStyle(builder: NotificationCompat.Builder,
-                             messages: MutableList<Message>): NotificationCompat.Builder {
+        private fun addStyle(
+            builder: NotificationCompat.Builder,
+            messages: MutableList<Message>
+        ): NotificationCompat.Builder {
             val message = messages[0]
 
             val title = String.format(
                     context.getString(R.string.nav_user_profile_info),
                     message.fromUser.firstName, message.fromUser.lastName)
-            val style= NotificationCompat.InboxStyle()
+            val style = NotificationCompat.InboxStyle()
                     .setBigContentTitle(title)
                     .setSummaryText(message.fromUser.email)
 

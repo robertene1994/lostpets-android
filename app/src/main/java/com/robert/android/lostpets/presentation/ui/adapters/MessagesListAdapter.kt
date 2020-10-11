@@ -13,10 +13,11 @@ import com.robert.android.lostpets.R
 import com.robert.android.lostpets.domain.model.Message
 import com.robert.android.lostpets.domain.model.User
 import com.robert.android.lostpets.domain.model.types.MessageStatus
-import kotlinx.android.synthetic.main.card_message_item.view.*
 import java.text.DateFormat
-import java.util.*
+import java.util.Date
+import java.util.Locale
 import kotlin.math.roundToInt
+import kotlinx.android.synthetic.main.card_message_item.view.*
 
 /**
  * Clase adapter que se tiene la función de mostrar los mensajes pertenecientes a un determinado
@@ -24,9 +25,11 @@ import kotlin.math.roundToInt
  *
  * @author Robert Ene
  */
-class MessagesListAdapter(private val items: List<Message>,
-                          private val user: User)
-    : RecyclerView.Adapter<MessagesListAdapter.ViewHolder>() {
+class MessagesListAdapter(
+    private val items: List<Message>,
+    private val user: User
+) :
+    RecyclerView.Adapter<MessagesListAdapter.ViewHolder>() {
 
     companion object {
 
@@ -48,8 +51,8 @@ class MessagesListAdapter(private val items: List<Message>,
      *
      * @author Robert Ene
      */
-    class ViewHolder(cardView: CardView)
-        : RecyclerView.ViewHolder(cardView) {
+    class ViewHolder(cardView: CardView) :
+        RecyclerView.ViewHolder(cardView) {
 
         /**
          * Método que se encarga de enlazar los detalles de un determinado mensaje a la

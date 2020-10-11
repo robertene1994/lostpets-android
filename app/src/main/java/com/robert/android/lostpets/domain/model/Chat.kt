@@ -3,12 +3,18 @@ package com.robert.android.lostpets.domain.model
 import android.os.Parcel
 import android.os.Parcelable
 
-data class Chat(var id: Long?, val code: String, val fromUser: User, val toUser: User,
-                val lastMessage: Message?, val unreadMessages: Long)
-    : Parcelable {
+data class Chat(
+    var id: Long?,
+    val code: String,
+    val fromUser: User,
+    val toUser: User,
+    val lastMessage: Message?,
+    val unreadMessages: Long
+) :
+    Parcelable {
 
-    constructor(parcel: Parcel)
-            : this(
+    constructor(parcel: Parcel) :
+            this(
             parcel.readValue(Long::class.java.classLoader) as Long?,
             parcel.readString()!!,
             parcel.readParcelable<User>(User::class.java.classLoader)!!,

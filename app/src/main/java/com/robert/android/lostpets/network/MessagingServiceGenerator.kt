@@ -2,12 +2,10 @@ package com.robert.android.lostpets.network
 
 import android.content.Context
 import com.robert.android.lostpets.BuildConfig
-import com.robert.android.lostpets.domain.utils.Jwt
 import com.robert.android.lostpets.storage.SessionRepositoryImpl
 import ua.naiksoftware.stomp.Stomp
 import ua.naiksoftware.stomp.StompClient
 import ua.naiksoftware.stomp.dto.StompHeader
-import java.util.*
 
 /**
  * Clase que genera los servicios de mensajería basados en la comunicación mediante el protocolo

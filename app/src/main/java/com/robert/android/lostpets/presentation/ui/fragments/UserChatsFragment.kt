@@ -71,8 +71,11 @@ class UserChatsFragment : AbstractFragment(), UserChatsPresenter.View, MessageBr
     private lateinit var mUser: User
     private var mUserToChat: User? = null
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         return inflater.inflate(R.layout.fragment_user_chats, container, false)
     }
 

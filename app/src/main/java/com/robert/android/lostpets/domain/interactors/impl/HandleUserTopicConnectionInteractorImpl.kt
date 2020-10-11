@@ -20,11 +20,14 @@ import ua.naiksoftware.stomp.StompClient
  * @see com.robert.android.lostpets.domain.interactors.base.AbstractInteractor
  * @see com.robert.android.lostpets.domain.interactors.HandleStompConnectionInteractor
  */
-class HandleUserTopicConnectionInteractorImpl(executor: Executor, mainThread: MainThread,
-                                              stompClient: StompClient,
-                                              sessionRepository: SessionRepository,
-                                              callback: HandleUserTopicConnectionInteractor.Callback)
-    : AbstractInteractor(executor, mainThread), HandleUserTopicConnectionInteractor {
+class HandleUserTopicConnectionInteractorImpl(
+    executor: Executor,
+    mainThread: MainThread,
+    stompClient: StompClient,
+    sessionRepository: SessionRepository,
+    callback: HandleUserTopicConnectionInteractor.Callback
+) :
+    AbstractInteractor(executor, mainThread), HandleUserTopicConnectionInteractor {
 
     private val mStompClient: StompClient = stompClient
     private val mSessionRepository: SessionRepository = sessionRepository

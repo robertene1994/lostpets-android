@@ -13,10 +13,14 @@ import com.robert.android.lostpets.domain.repository.SettingsRepository
  * @see com.robert.android.lostpets.domain.interactors.base.AbstractInteractor
  * @see com.robert.android.lostpets.domain.interactors.SaveSettingsInteractor
  */
-class SaveLanguageInteractorImpl(executor: Executor, mainThread: MainThread,
-                                 callback: SaveSettingsInteractor.Callback,
-                                 settingsRepository: SettingsRepository, language: String)
-    : AbstractInteractor(executor, mainThread), SaveSettingsInteractor {
+class SaveLanguageInteractorImpl(
+    executor: Executor,
+    mainThread: MainThread,
+    callback: SaveSettingsInteractor.Callback,
+    settingsRepository: SettingsRepository,
+    language: String
+) :
+    AbstractInteractor(executor, mainThread), SaveSettingsInteractor {
 
     private val mCallback: SaveSettingsInteractor.Callback = callback
     private val mSettingsRepository: SettingsRepository = settingsRepository

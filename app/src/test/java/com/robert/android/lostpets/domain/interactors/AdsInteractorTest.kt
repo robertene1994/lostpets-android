@@ -11,11 +11,16 @@ import com.robert.android.lostpets.domain.model.Ad
 import com.robert.android.lostpets.domain.model.LatLng
 import com.robert.android.lostpets.domain.model.Pet
 import com.robert.android.lostpets.domain.model.User
-import com.robert.android.lostpets.domain.model.types.*
+import com.robert.android.lostpets.domain.model.types.AdStatus
+import com.robert.android.lostpets.domain.model.types.PetStatus
+import com.robert.android.lostpets.domain.model.types.Role
+import com.robert.android.lostpets.domain.model.types.Sex
+import com.robert.android.lostpets.domain.model.types.UserStatus
 import com.robert.android.lostpets.network.MockServiceGenerator
 import com.robert.android.lostpets.network.converter.GsonSerializer
 import com.robert.android.lostpets.network.service.AdService
 import com.robert.android.lostpets.utilTest.threading.TestMainThread
+import java.util.Date
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import okhttp3.mockwebserver.SocketPolicy
@@ -24,9 +29,11 @@ import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
-import org.mockito.Mockito.*
+import org.mockito.Mockito.`when`
+import org.mockito.Mockito.timeout
+import org.mockito.Mockito.verify
+import org.mockito.Mockito.verifyNoMoreInteractions
 import org.mockito.junit.MockitoJUnitRunner
-import java.util.*
 
 /**
  * Clase test para la clase AdsInteractorImpl.

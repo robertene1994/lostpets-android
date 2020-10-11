@@ -19,10 +19,14 @@ import java.io.FileOutputStream
  * @see com.robert.android.lostpets.domain.interactors.base.AbstractInteractor
  * @see com.robert.android.lostpets.domain.interactors.ProcessImageInteractor
  */
-class ProcessImageInteractorImpl(executor: Executor, mainThread: MainThread,
-                                 callback: ProcessImageInteractor.Callback,
-                                 context: Context, uri: Uri)
-    : AbstractInteractor(executor, mainThread), ProcessImageInteractor {
+class ProcessImageInteractorImpl(
+    executor: Executor,
+    mainThread: MainThread,
+    callback: ProcessImageInteractor.Callback,
+    context: Context,
+    uri: Uri
+) :
+    AbstractInteractor(executor, mainThread), ProcessImageInteractor {
 
     companion object {
         private const val PET_IMAGE_FILE_NAME = "petImage"

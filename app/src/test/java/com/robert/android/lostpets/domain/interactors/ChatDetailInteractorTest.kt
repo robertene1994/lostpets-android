@@ -17,6 +17,7 @@ import com.robert.android.lostpets.network.MockServiceGenerator
 import com.robert.android.lostpets.network.converter.GsonSerializer
 import com.robert.android.lostpets.network.service.MessageService
 import com.robert.android.lostpets.utilTest.threading.TestMainThread
+import java.util.Date
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import okhttp3.mockwebserver.SocketPolicy
@@ -25,9 +26,11 @@ import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
-import org.mockito.Mockito.*
+import org.mockito.Mockito.`when`
+import org.mockito.Mockito.timeout
+import org.mockito.Mockito.verify
+import org.mockito.Mockito.verifyNoMoreInteractions
 import org.mockito.junit.MockitoJUnitRunner
-import java.util.*
 
 /**
  * Clase test para la clase ChatDetailInteractorImpl.

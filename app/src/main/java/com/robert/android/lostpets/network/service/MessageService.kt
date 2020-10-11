@@ -23,6 +23,8 @@ interface MessageService {
      * @return la llamada asíncrona a la API.
      */
     @GET("message/markAsRead/{chatCode}")
-    fun getChatMessagesAndMarkAsRead(@Path("chatCode") chatCode: String,
-                                     @Query("userEmail") userEmail: String): Call<List<Message>>
+    fun getChatMessagesAndMarkAsRead(
+        @Path("chatCode") chatCode: String,
+        @Query("userEmail") userEmail: String
+    ): Call<List<Message>>
 }

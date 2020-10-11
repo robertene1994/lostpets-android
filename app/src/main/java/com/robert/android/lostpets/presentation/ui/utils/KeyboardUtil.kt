@@ -21,8 +21,8 @@ class KeyboardUtil {
          * @param view la vista en la que se oculta el teclado virtual.
          */
         fun hideKeyboard(context: Context, view: View) {
-            val imm
-                    = context.getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+            val imm =
+                    context.getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
             imm.hideSoftInputFromWindow(view.windowToken, InputMethodManager.RESULT_UNCHANGED_SHOWN)
         }
     }

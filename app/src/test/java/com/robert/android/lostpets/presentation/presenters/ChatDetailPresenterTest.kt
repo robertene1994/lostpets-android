@@ -12,13 +12,15 @@ import com.robert.android.lostpets.domain.model.types.UserStatus
 import com.robert.android.lostpets.network.service.MessageService
 import com.robert.android.lostpets.presentation.presenters.impl.ChatDetailPresenterImpl
 import com.robert.android.lostpets.utilTest.threading.TestMainThread
+import java.util.Date
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
-import org.mockito.Mockito.*
+import org.mockito.Mockito.spy
+import org.mockito.Mockito.verify
+import org.mockito.Mockito.verifyNoMoreInteractions
 import org.mockito.junit.MockitoJUnitRunner
-import java.util.*
 
 /**
  * Clase test para la clase ChatDetailPresenterImpl.

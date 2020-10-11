@@ -4,12 +4,18 @@ import android.os.Parcel
 import android.os.Parcelable
 import com.robert.android.lostpets.domain.model.types.Sex
 
-data class Pet(val name: String, val type: String, val race: String,
-               val sex: Sex, val colour: String, val microchipId: String)
-    : Parcelable {
+data class Pet(
+    val name: String,
+    val type: String,
+    val race: String,
+    val sex: Sex,
+    val colour: String,
+    val microchipId: String
+) :
+    Parcelable {
 
-    constructor(parcel: Parcel)
-            : this(parcel.readString()!!, parcel.readString()!!, parcel.readString()!!,
+    constructor(parcel: Parcel) :
+            this(parcel.readString()!!, parcel.readString()!!, parcel.readString()!!,
             Sex.values()[parcel.readInt()], parcel.readString()!!, parcel.readString()!!)
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {

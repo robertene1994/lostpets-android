@@ -1,12 +1,10 @@
 package com.robert.android.lostpets.network.security
 
 import android.content.Context
-
 import com.robert.android.lostpets.domain.repository.SessionRepository
 import com.robert.android.lostpets.domain.repository.SettingsRepository
 import com.robert.android.lostpets.storage.SessionRepositoryImpl
 import com.robert.android.lostpets.storage.SettingsRepositoryImpl
-
 import okhttp3.Interceptor
 import okhttp3.Request
 import okhttp3.Response

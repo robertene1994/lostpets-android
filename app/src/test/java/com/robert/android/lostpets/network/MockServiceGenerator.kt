@@ -2,12 +2,12 @@ package com.robert.android.lostpets.network
 
 import com.robert.android.lostpets.BuildConfig
 import com.robert.android.lostpets.network.converter.GsonSerializer
+import java.util.concurrent.TimeUnit
 import okhttp3.OkHttpClient
 import okhttp3.mockwebserver.MockWebServer
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
-import java.util.concurrent.TimeUnit
 
 /**
  * Clase que genera mocks para los servicios de la API disponibles para los usuarios.

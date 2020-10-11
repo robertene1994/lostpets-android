@@ -2,7 +2,8 @@ package com.robert.android.lostpets.domain.utils
 
 import com.robert.android.lostpets.network.converter.GsonSerializer
 import java.nio.charset.StandardCharsets
-import java.util.*
+import java.util.Base64
+import java.util.Date
 import kotlin.math.floor
 
 /**

@@ -41,8 +41,11 @@ class ScrollableMapFragment : SupportMapFragment() {
 
     private lateinit var mTouchListener: OnTouchListener
 
-    override fun onCreateView(layoutInflater: LayoutInflater, viewGroup: ViewGroup?,
-                              savedInstance: Bundle?): View? {
+    override fun onCreateView(
+        layoutInflater: LayoutInflater,
+        viewGroup: ViewGroup?,
+        savedInstance: Bundle?
+    ): View? {
         val layout = super.onCreateView(layoutInflater, viewGroup, savedInstance)
         (layout as ViewGroup).addView(TouchableWrapper(activity!!),
                 ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,

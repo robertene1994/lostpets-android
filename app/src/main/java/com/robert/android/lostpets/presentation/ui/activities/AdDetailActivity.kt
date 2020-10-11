@@ -14,8 +14,8 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.robert.android.lostpets.R
 import com.robert.android.lostpets.domain.model.Ad
 import com.robert.android.lostpets.domain.model.User
-import com.robert.android.lostpets.domain.model.types.Sex
 import com.robert.android.lostpets.domain.model.types.PetStatus
+import com.robert.android.lostpets.domain.model.types.Sex
 import com.robert.android.lostpets.network.ServiceGenerator
 import com.robert.android.lostpets.presentation.ui.activities.base.AbstractActivity
 import com.robert.android.lostpets.presentation.ui.adapters.AdsListAdapter
@@ -110,7 +110,7 @@ class AdDetailActivity : AbstractActivity(), OnMapReadyCallback,
         updateAdObservationsEditText.setText(mAd.observations)
         adDateEditText.setText(AdsListAdapter.formatAdLongDate(mAd.date))
 
-        val mapFragment= supportFragmentManager
+        val mapFragment = supportFragmentManager
                 .findFragmentById(R.id.mapFragment) as ScrollableMapFragment
         mapFragment.setOnTouchListener(this)
         mapFragment.getMapAsync(this)
@@ -139,7 +139,7 @@ class AdDetailActivity : AbstractActivity(), OnMapReadyCallback,
         chatButton.isEnabled = mUser != mAd.user
 
         sendEmailButton.setOnClickListener { onClickEmail() }
-        callButton.setOnClickListener { onClickPhone()}
+        callButton.setOnClickListener { onClickPhone() }
         chatButton.setOnClickListener { onClickChat() }
     }
 
@@ -153,7 +153,6 @@ class AdDetailActivity : AbstractActivity(), OnMapReadyCallback,
         val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:${mAd.user.phone}"))
         if (intent.resolveActivity(packageManager) != null)
             startActivity(intent)
-
     }
 
     private fun onClickChat() {

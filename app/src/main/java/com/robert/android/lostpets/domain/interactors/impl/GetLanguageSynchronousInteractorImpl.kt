@@ -2,7 +2,7 @@ package com.robert.android.lostpets.domain.interactors.impl
 
 import com.robert.android.lostpets.domain.interactors.GetLanguageSynchronousInteractor
 import com.robert.android.lostpets.domain.repository.SettingsRepository
-import java.util.*
+import java.util.Locale
 
 /**
  * Clase que implementa la interfaz GetLanguageSynchronousInteractor.
@@ -10,8 +10,8 @@ import java.util.*
  * @author Robert Ene
  * @see com.robert.android.lostpets.domain.interactors.GetLanguageSynchronousInteractor
  */
-class GetLanguageSynchronousInteractorImpl(settingsRepository: SettingsRepository)
-    : GetLanguageSynchronousInteractor {
+class GetLanguageSynchronousInteractorImpl(settingsRepository: SettingsRepository) :
+    GetLanguageSynchronousInteractor {
 
     private val mSettingsRepository: SettingsRepository = settingsRepository
 

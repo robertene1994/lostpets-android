@@ -199,7 +199,7 @@ class MessagingService : Service(), HandleStompConnectionInteractor.Callback,
         if (message.messageStatus == MessageStatus.SENT) {
             message.messageStatus = MessageStatus.DELIVERED
             SendMessageInteractorImpl(ThreadExecutor.instance, MainThreadImpl.instance,
-                    mStompClient,null, message, message.fromUser).execute()
+                    mStompClient, null, message, message.fromUser).execute()
         }
 
         if (message.fromUser.id != mUser!!.id) {
@@ -217,11 +217,11 @@ class MessagingService : Service(), HandleStompConnectionInteractor.Callback,
     }
 
     private fun isChatDetailActivityVisible(): Boolean {
-        val activityManager
-                = getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
+        val activityManager =
+                getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
         activityManager.appTasks.forEach {
-            if (it.taskInfo.topActivity != null
-                    && it.taskInfo.topActivity.toString().contains("ChatDetailActivity"))
+            if (it.taskInfo.topActivity != null &&
+                    it.taskInfo.topActivity.toString().contains("ChatDetailActivity"))
                 return true
         }
         return false

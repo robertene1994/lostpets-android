@@ -10,19 +10,23 @@ import android.view.ViewGroup
 import com.robert.android.lostpets.R
 import com.robert.android.lostpets.domain.model.Chat
 import com.robert.android.lostpets.domain.model.types.MessageStatus
-import kotlinx.android.synthetic.main.card_chat_item.view.*
 import java.text.DateFormat
-import java.util.*
+import java.util.Calendar
+import java.util.Date
+import java.util.Locale
 import kotlin.math.roundToInt
+import kotlinx.android.synthetic.main.card_chat_item.view.*
 
 /**
  * Clase adapter que se tiene la función de mostrar los chats del usuario.
  *
  * @author Robert Ene
  */
-class ChatsListAdapter(private val items: List<Chat>,
-                       private val itemClick: (Chat) -> Unit)
-    : RecyclerView.Adapter<ChatsListAdapter.ViewHolder>() {
+class ChatsListAdapter(
+    private val items: List<Chat>,
+    private val itemClick: (Chat) -> Unit
+) :
+    RecyclerView.Adapter<ChatsListAdapter.ViewHolder>() {
 
     companion object {
 
@@ -54,9 +58,11 @@ class ChatsListAdapter(private val items: List<Chat>,
      *
      * @author Robert Ene
      */
-    class ViewHolder(cardView: CardView,
-                     private val itemClick: (Chat) -> Unit)
-        : RecyclerView.ViewHolder(cardView) {
+    class ViewHolder(
+        cardView: CardView,
+        private val itemClick: (Chat) -> Unit
+    ) :
+        RecyclerView.ViewHolder(cardView) {
 
         /**
          * Método que se encarga de enlazar los detalles de un determinado chat a la
@@ -124,9 +130,9 @@ class ChatsListAdapter(private val items: List<Chat>,
             val today = Calendar.getInstance()
             val specifiedDate = Calendar.getInstance()
             specifiedDate.time = date
-            return today[Calendar.DAY_OF_MONTH] == specifiedDate[Calendar.DAY_OF_MONTH]
-                    && today[Calendar.MONTH] == specifiedDate[Calendar.MONTH]
-                    && today[Calendar.YEAR] == specifiedDate[Calendar.YEAR]
+            return today[Calendar.DAY_OF_MONTH] == specifiedDate[Calendar.DAY_OF_MONTH] &&
+                    today[Calendar.MONTH] == specifiedDate[Calendar.MONTH] &&
+                    today[Calendar.YEAR] == specifiedDate[Calendar.YEAR]
         }
     }
 

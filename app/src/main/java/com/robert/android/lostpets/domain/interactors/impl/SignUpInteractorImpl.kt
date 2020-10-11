@@ -18,10 +18,15 @@ import retrofit2.Response
  * @see com.robert.android.lostpets.domain.interactors.base.AbstractInteractor
  * @see com.robert.android.lostpets.domain.interactors.SignUpInteractor
  */
-class SignUpInteractorImpl(executor: Executor, mainThread: MainThread,
-                           callback: SignUpInteractor.Callback,
-                           context: Context, service: UserService, user: User)
-    : AbstractInteractor(executor, mainThread), SignUpInteractor {
+class SignUpInteractorImpl(
+    executor: Executor,
+    mainThread: MainThread,
+    callback: SignUpInteractor.Callback,
+    context: Context,
+    service: UserService,
+    user: User
+) :
+    AbstractInteractor(executor, mainThread), SignUpInteractor {
 
     private val mCallback: SignUpInteractor.Callback = callback
     private val mContext: Context = context

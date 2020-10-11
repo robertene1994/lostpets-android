@@ -33,7 +33,7 @@ import kotlinx.android.synthetic.main.progress_bar.*
  * @see com.robert.android.lostpets.presentation.ui.fragments.base.AbstractFragment
  * @see com.robert.android.lostpets.presentation.presenters.UserAdsPresenter.View
  */
-class UserAdsFragment: AbstractFragment(), UserAdsPresenter.View {
+class UserAdsFragment : AbstractFragment(), UserAdsPresenter.View {
 
     companion object {
         private const val USER = "UserAdsFragment::User"
@@ -57,8 +57,11 @@ class UserAdsFragment: AbstractFragment(), UserAdsPresenter.View {
     private lateinit var mUserAdsPresenter: UserAdsPresenter
     private lateinit var mUser: User
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         return inflater.inflate(R.layout.fragment_user_ads, container, false)
     }
 

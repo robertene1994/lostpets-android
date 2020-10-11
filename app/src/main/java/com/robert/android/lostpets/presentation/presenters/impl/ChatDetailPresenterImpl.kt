@@ -27,10 +27,15 @@ import com.robert.android.lostpets.presentation.presenters.base.AbstractPresente
  * @see com.robert.android.lostpets.domain.interactors.ChatDetailInteractor.Callback
  * @see com.robert.android.lostpets.domain.interactors.SendMessageInteractor.Callback
  */
-class ChatDetailPresenterImpl(executor: Executor, mainThread: MainThread,
-                              view: ChatDetailPresenter.View, context: Context,
-                              service: MessageService, chat: Chat)
-    : AbstractPresenter(executor, mainThread), ChatDetailPresenter, ChatDetailInteractor.Callback,
+class ChatDetailPresenterImpl(
+    executor: Executor,
+    mainThread: MainThread,
+    view: ChatDetailPresenter.View,
+    context: Context,
+    service: MessageService,
+    chat: Chat
+) :
+    AbstractPresenter(executor, mainThread), ChatDetailPresenter, ChatDetailInteractor.Callback,
         SendMessageInteractor.Callback {
 
     private val mView: ChatDetailPresenter.View = view
@@ -84,8 +89,8 @@ class ChatDetailPresenterImpl(executor: Executor, mainThread: MainThread,
     override fun onMessageReceived(message: Message) {
         val stompClient = MessagingService.getStompClient()
         if (mChat.code == message.chat?.code) {
-            if (mChat.fromUser.id == message.toUser.id
-                    && message.messageStatus == MessageStatus.SENT) {
+            if (mChat.fromUser.id == message.toUser.id &&
+                    message.messageStatus == MessageStatus.SENT) {
                 mView.messageReceived(message)
 
                 message.messageStatus = MessageStatus.DELIVERED

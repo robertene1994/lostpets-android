@@ -13,10 +13,13 @@ import com.robert.android.lostpets.domain.repository.SessionRepository
  * @see com.robert.android.lostpets.domain.interactors.base.AbstractInteractor
  * @see com.robert.android.lostpets.domain.interactors.GetUserInteractor
  */
-class GetUserInteractorImpl(executor: Executor, mainThread: MainThread,
-                            callback: GetUserInteractor.Callback,
-                            sessionRepository: SessionRepository)
-    : AbstractInteractor(executor, mainThread), GetUserInteractor {
+class GetUserInteractorImpl(
+    executor: Executor,
+    mainThread: MainThread,
+    callback: GetUserInteractor.Callback,
+    sessionRepository: SessionRepository
+) :
+    AbstractInteractor(executor, mainThread), GetUserInteractor {
 
     private val mCallback: GetUserInteractor.Callback = callback
     private val mSessionRepository: SessionRepository = sessionRepository

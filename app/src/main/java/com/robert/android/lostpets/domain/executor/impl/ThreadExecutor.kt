@@ -25,7 +25,7 @@ class ThreadExecutor : Executor {
         val mThreadPoolExecutor by lazy {
             ThreadPoolExecutor(CORE_POOL_SIZE, MAX_POOL_SIZE, KEEP_ALIVE_TIME, TIME_UNIT, WORK_QUEUE)
         }
-        val instance: Executor by lazy { ThreadExecutor()  }
+        val instance: Executor by lazy { ThreadExecutor() }
     }
 
     override fun execute(interactor: AbstractInteractor) {

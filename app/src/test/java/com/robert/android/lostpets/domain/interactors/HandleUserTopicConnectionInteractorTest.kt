@@ -15,16 +15,18 @@ import com.robert.android.lostpets.network.converter.GsonSerializer
 import com.robert.android.lostpets.utilTest.threading.TestMainThread
 import io.reactivex.BackpressureStrategy
 import io.reactivex.Observable
+import java.util.Date
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
-import org.mockito.Mockito.*
+import org.mockito.Mockito.`when`
+import org.mockito.Mockito.verify
+import org.mockito.Mockito.verifyNoMoreInteractions
 import org.mockito.junit.MockitoJUnitRunner
 import ua.naiksoftware.stomp.StompClient
 import ua.naiksoftware.stomp.dto.StompCommand
 import ua.naiksoftware.stomp.dto.StompMessage
-import java.util.*
 
 /**
  * Clase test para la clase HandleUserTopicConnectionInteractorImpl.

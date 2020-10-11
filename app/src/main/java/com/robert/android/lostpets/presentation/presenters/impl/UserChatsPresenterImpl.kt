@@ -20,10 +20,15 @@ import com.robert.android.lostpets.presentation.presenters.base.AbstractPresente
  * @see com.robert.android.lostpets.presentation.presenters.UserChatsPresenter
  * @see com.robert.android.lostpets.domain.interactors.UserChatsInteractor.Callback
  */
-class UserChatsPresenterImpl(executor: Executor, mainThread: MainThread,
-                             view: UserChatsPresenter.View, context: Context,
-                             service: ChatService, user: User)
-    : AbstractPresenter(executor, mainThread), UserChatsPresenter, UserChatsInteractor.Callback {
+class UserChatsPresenterImpl(
+    executor: Executor,
+    mainThread: MainThread,
+    view: UserChatsPresenter.View,
+    context: Context,
+    service: ChatService,
+    user: User
+) :
+    AbstractPresenter(executor, mainThread), UserChatsPresenter, UserChatsInteractor.Callback {
 
     private val mView: UserChatsPresenter.View = view
     private val mContext: Context = context

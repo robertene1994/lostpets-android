@@ -20,11 +20,15 @@ import ua.naiksoftware.stomp.StompClient
  * @see com.robert.android.lostpets.domain.interactors.base.AbstractInteractor
  * @see com.robert.android.lostpets.domain.interactors.SendMessageInteractor
  */
-class SendMessageInteractorImpl(executor: Executor, mainThread: MainThread,
-                                stompClient: StompClient?,
-                                callback: SendMessageInteractor.Callback?,
-                                message: Message, user: User)
-    : AbstractInteractor(executor, mainThread), SendMessageInteractor {
+class SendMessageInteractorImpl(
+    executor: Executor,
+    mainThread: MainThread,
+    stompClient: StompClient?,
+    callback: SendMessageInteractor.Callback?,
+    message: Message,
+    user: User
+) :
+    AbstractInteractor(executor, mainThread), SendMessageInteractor {
 
     private val mStompClient: StompClient? = stompClient
     private val mCallback: SendMessageInteractor.Callback? = callback

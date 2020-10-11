@@ -18,10 +18,15 @@ import retrofit2.Response
  * @see com.robert.android.lostpets.domain.interactors.base.AbstractInteractor
  * @see com.robert.android.lostpets.domain.interactors.CheckUniqueEmailInteractor
  */
-class CheckUniqueEmailInteractorImpl(executor: Executor, mainThread: MainThread,
-                                     callback: CheckUniqueEmailInteractor.Callback,
-                                     context: Context, service: UserService, email: String)
-    : AbstractInteractor(executor, mainThread), CheckUniqueEmailInteractor {
+class CheckUniqueEmailInteractorImpl(
+    executor: Executor,
+    mainThread: MainThread,
+    callback: CheckUniqueEmailInteractor.Callback,
+    context: Context,
+    service: UserService,
+    email: String
+) :
+    AbstractInteractor(executor, mainThread), CheckUniqueEmailInteractor {
 
     private val mCallback: CheckUniqueEmailInteractor.Callback = callback
     private val mContext: Context = context
