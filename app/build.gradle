@@ -74,8 +74,8 @@ android {
         }
 
         releaseAws {
-            testCoverageEnabled false
-            minifyEnabled true
+            testCoverageEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             testProguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguardTest-rules.pro'
 
@@ -85,8 +85,8 @@ android {
         }
 
         releaseHeroku {
-            testCoverageEnabled false
-            minifyEnabled true
+            testCoverageEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             testProguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguardTest-rules.pro'
 
