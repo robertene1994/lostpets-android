@@ -1,2 +1,7 @@
 # other generated files
 /build
+/debug
+/debugEmulator
+/release
+/releaseHeroku
+/releaseAws
