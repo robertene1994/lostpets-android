@@ -27,6 +27,7 @@ import java.util.Locale
  * @see com.robert.android.lostpets.domain.interactors.GetLanguageInteractor.Callback
  * @see com.robert.android.lostpets.domain.interactors.SaveSettingsInteractor.Callback
  */
+@SuppressWarnings("kotlin:S4144")
 class SettingsPresenterImpl(
     executor: Executor,
     mainThread: MainThread,

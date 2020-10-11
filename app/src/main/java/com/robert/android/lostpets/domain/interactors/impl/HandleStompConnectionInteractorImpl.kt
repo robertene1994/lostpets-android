@@ -32,7 +32,9 @@ class HandleStompConnectionInteractorImpl(
     override fun run() {
         mStompClient.lifecycle().subscribe { lifecycleEvent ->
             when (lifecycleEvent?.type) {
-                LifecycleEvent.Type.OPENED -> { }
+                LifecycleEvent.Type.OPENED -> {
+                    // no aplicable
+                }
                 LifecycleEvent.Type.ERROR ->
                     mMainThread.post(Runnable { mCallback.onConnectionError() })
                 LifecycleEvent.Type.CLOSED ->

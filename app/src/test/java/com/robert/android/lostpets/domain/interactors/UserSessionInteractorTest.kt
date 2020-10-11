@@ -35,6 +35,7 @@ import org.mockito.junit.MockitoJUnitRunner
  * @author Robert Ene
  * @see com.robert.android.lostpets.domain.interactors.impl.UserSessionInteractorImpl
  */
+@SuppressWarnings("kotlin:S1192")
 @RunWith(MockitoJUnitRunner::class)
 class UserSessionInteractorTest {
 

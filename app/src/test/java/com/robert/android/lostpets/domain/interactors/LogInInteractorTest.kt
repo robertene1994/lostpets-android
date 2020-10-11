@@ -36,7 +36,8 @@ import org.mockito.junit.MockitoJUnitRunner
  * @author Robert Ene
  * @see com.robert.android.lostpets.domain.interactors.impl.LogInInteractorImpl
  */
-@RunWith(MockitoJUnitRunner::class)
+@SuppressWarnings("kotlin:S1192")
+@RunWith(MockitoJUnitRunner.Silent::class)
 class LogInInteractorTest {
 
     private companion object {

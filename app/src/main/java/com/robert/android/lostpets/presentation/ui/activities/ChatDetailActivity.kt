@@ -210,8 +210,12 @@ class ChatDetailActivity : AbstractActivity(), ChatDetailPresenter.View, Message
 
     private fun onMessageTextChanged(): TextWatcher {
         return object : TextWatcher {
-            override fun afterTextChanged(s: Editable) {}
-            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun afterTextChanged(s: Editable) {
+                // no aplicable
+            }
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                // no aplicable
+            }
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
                 sendMessageImageButton.isEnabled = s.toString().trim().isNotEmpty()
             }
