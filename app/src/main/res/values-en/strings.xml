@@ -1,0 +1,212 @@
+<resources>
+    <string name="app_name">Lost Pets</string>
+    <string name="message_service_name">Message Service</string>
+
+    <string name="notification_channel_id">Lost Pets</string>
+    <string name="notification_channel_group_id">Lost Pets G</string>
+    <string name="notification_channel_group_name">Chats</string>
+    <string name="notification_channel_name">Message notifications</string>
+    <string name="foreground_service_notification_content">Checking messages…</string>
+
+    <string name="login_activity_toolbar_title">Login</string>
+    <string name="signup_activity_toolbar_title">Signup</string>
+    <string name="ads_fragment_toolbar_title">Ads</string>
+    <string name="ad_detail_activity_toolbar_title">Ad Detail</string>
+    <string name="user_ads_fragment_toolbar_title">My Ads</string>
+    <string name="user_chats_fragment_toolbar_title">Chats</string>
+    <string name="add_ad_fragment_toolbar_title">New Ad</string>
+    <string name="update_ad_fragment_toolbar_title">Update Ad</string>
+    <string name="settings_fragment_toolbar_title">Settings</string>
+
+    <string name="cont_desc_login">Logo for app</string>
+
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_signup">Signup</string>
+
+    <string name="hint_phone">Phone</string>
+    <string name="hint_first_name">First Name</string>
+    <string name="hint_last_name">Last Name</string>
+    <string name="hint_repeated_password">Repeat Password</string>
+
+    <string name="msg_email_required">Email is required!</string>
+    <string name="msg_email_invalid">Email is invalid!</string>
+    <string name="msg_email_not_unique">There is already a user with this email!</string>
+    <string name="msg_signed_up_user">Your account has been created successfully!</string>
+    <string name="msg_phone_required">Phone is required!</string>
+    <string name="msg_phone_invalid">Phone is invalid!</string>
+    <string name="msg_first_name_required">First name is required!</string>
+    <string name="msg_last_name_required">Last name is required!</string>
+    <string name="msg_password_required">Password is required!</string>
+    <string name="msg_repeated_password_required">Repeat password is required!</string>
+    <string name="msg_repeated_password_invalid">Passwords do not match!</string>
+
+    <string name="msg_no_internet_connection">No Internet connection at the moment!</string>
+    <string name="msg_service_not_avabile">Service not available at the moment!</string>
+    <string name="msg_invalid_email_or_password">Email or password are invalid!</string>
+    <string name="msg_expired_session">The session has expired! Please, log in again!</string>
+    <string name="msg_user_disabled">Your account has been disabled!</string>
+    <string name="msg_only_users_allowed">Only users can access the mobile app!</string>
+
+    <string name="msg_messaging_message_sent_error">An error occurred while sending
+        messages! Resending the last message!</string>
+    <string name="msg_messaging_connection_error">Connection has been reset!</string>
+    <string name="msg_messaging_failed_server_heartbeat">Connection to server has been
+        lost! Reconnecting!</string>
+    <string name="msg_messaging_message_received_error">An error occurred while receiving
+        messages! Reconnecting!</string>
+
+    <string name="cont_desc_progress_bar_logo">Progress bar logo</string>
+
+    <string name="navigation_drawer_open">Open menu navigation</string>
+    <string name="navigation_drawer_close">Close menu navigation</string>
+
+    <string name="cont_desc_logged_account">Logo for the user who has logged in</string>
+
+    <string name="cont_desc_pet">Image of the lost pet</string>
+    <string name="cont_desc_feeling_pet_status">Image of the feeling status</string>
+    <string name="cont_desc_user_chat">Image of the chat user</string>
+
+    <string name="cont_desc_language_logo">Language preference logo</string>
+    <string name="pref_language">Language</string>
+    <string name="pref_language_description">Change application language</string>
+
+    <string name="nav_user_profile_info">%1$s %2$s</string>
+
+    <string name="nav_ads">Ads</string>
+    <string name="nav_user_ads">My Ads</string>
+    <string name="nav_add_ad">New Ad</string>
+    <string name="nav_user_chats">Chats</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_logout">Logout</string>
+
+    <string name="hint_pet_status">Pet Status</string>
+    <string name="hint_code">Ad Code</string>
+    <string name="hint_name">Pet Name</string>
+    <string name="hint_date">Date of Disappearance</string>
+    <string name="hint_reward">Offered Reward</string>
+
+    <string name="ad_pet_status_lost">Lost</string>
+    <string name="ad_pet_status_found">Found</string>
+    <string name="ad_reward">%1$.2f €</string>
+
+    <string name="msg_no_ads">There are no ads for lost pets!</string>
+    <string name="msg_no_user_ads">You haven not published any ads yet!</string>
+    <string name="msg_disabled_user_ads">Some of the ads you have published has been
+        disabled for violating the community rules!</string>
+    <string name="msg_no_chats">¡There are no chats!</string>
+
+    <string name="cont_desc_card_chat_item_last_message_status">Logo for chat last message
+        status</string>
+
+    <string name="hint_message_chat_detail">Write a message…</string>
+    <string name="cont_desc_chat_detail_send_message">Logo for send message button</string>
+    <string name="cont_desc_card_message_item_status">Logo for chat message status</string>
+
+    <string name="cont_desc_ad_detail_pet">Image of the lost pet of the ad details</string>
+    <string name="cont_desc_ad_detail_feeling_pet_status">Image of the feeling status of the ad
+        details</string>
+    <string name="cont_desc_ad_detail_update_ad">Logo for update ad button</string>
+
+    <string name="text_ad">Ad</string>
+    <string name="hint_code_ad_detail">Code</string>
+    <string name="hint_pet_status_ad_detail">Pet Status</string>
+    <string name="hint_reward_ad_detail">Offered Reward</string>
+    <string name="hint_date_ad_detail">Date of Disappearance</string>
+    <string name="map_marker_title_ad_detail">Location of %1$s\'s disappearance</string>
+    <string name="hint_remarks_ad_details">Remarks</string>
+    <string name="text_pet">Pet</string>
+    <string name="hint_name_ad_detail">Name</string>
+    <string name="hint_type_ad_detail">Type</string>
+    <string name="hint_race_ad_detail">Race</string>
+    <string name="hint_sex_ad_detail">Sex</string>
+    <string name="ad_detail_pet_sex_male">Male</string>
+    <string name="ad_detail_pet_sex_female">Female</string>
+    <string name="hint_colour_ad_detail">Colour</string>
+    <string name="hint_microchip_id_ad_detail">Microchip (ID)</string>
+    <string name="text_owner">Owner</string>
+    <string name="hint_first_name_ad_detail">First Name</string>
+    <string name="hint_last_name_ad_detail">Last Name</string>
+    <string name="hint_email_ad_detail">Email</string>
+    <string name="cont_desc_ad_detail_send_email">Logo for the submit button email</string>
+    <string name="hint_phone_ad_detail">Phone</string>
+    <string name="cont_desc_ad_detail_call">Logo for the call button</string>
+    <string name="cont_desc_ad_detail_chat">Logo for the chat button</string>
+
+    <string name="choose_pet_image">Select image of the pet</string>
+    <string name="cont_desc_add_ad_pet">Photo of the lost pet of the new ad</string>
+    <string name="text_ad_add_ad">Ad</string>
+    <string name="hint_reward_add_ad">Offered Reward</string>
+    <string name="hint_date_add_ad">Date of Disappearance</string>
+    <string name="hint_time_add_ad">Time of Disappearance</string>
+    <string name="map_marker_title_add_ad">Location of pet\'s disappearance</string>
+    <string name="cont_desc_add_ad_select_date">Logo for the selection button for the date of
+        disappearance</string>
+    <string name="cont_desc_add_ad_select_time">Logo for the selection button for the time of
+        disappearance</string>
+    <string name="hint_remarks_add_ad">Remarks</string>
+    <string name="text_pet_add_ad">Pet</string>
+    <string name="hint_name_add_ad">Name</string>
+    <string name="hint_type_add_ad">Type</string>
+    <string name="hint_race_add_ad">Race</string>
+    <string name="add_ad_pet_sex">Sex</string>
+    <string name="add_ad_pet_sex_male">Male</string>
+    <string name="add_ad_pet_sex_female">Female</string>
+    <string name="hint_colour_add_ad">Colour</string>
+    <string name="hint_microchip_id_add_ad">Microchip (ID)</string>
+    <string name="btn_add_ad">Publish Ad</string>
+
+    <string name="cont_desc_update_ad_pet">Image of the lost pet</string>
+    <string name="text_ad_update_ad">Ad</string>
+    <string name="update_ad_pet_status">State</string>
+    <string name="update_ad_pet_status_found">Found</string>
+    <string name="update_ad_pet_status_lost">Lost</string>
+    <string name="hint_reward_update_ad">Offered Reward</string>
+    <string name="hint_date_update_ad">Date of Disappearance</string>
+    <string name="hint_time_update_ad">Time of Disappearance</string>
+    <string name="map_marker_title_update_ad">Location of pet\'s disappearance</string>
+    <string name="cont_desc_update_ad_pet_status">Logo for pet ad status</string>
+    <string name="cont_desc_update_ad_select_date">Logo for the selection button for the date of
+        disappearance</string>
+    <string name="cont_desc_update_ad_select_time">Logo for the selection button for the time of
+        disappearance</string>
+    <string name="hint_remarks_update_ad">Remarks</string>
+    <string name="text_pet_update_ad">Pet</string>
+    <string name="hint_pet_name_update_ad">Name</string>
+    <string name="hint_type_update_ad">Type</string>
+    <string name="hint_race_update_ad">Race</string>
+    <string name="update_ad_pet_sex">Sex</string>
+    <string name="update_ad_pet_sex_male">Male</string>
+    <string name="update_ad_pet_sex_female">Female</string>
+    <string name="hint_colour_update_ad">Colour</string>
+    <string name="hint_microchip_id_update_ad">Microchip (ID)</string>
+    <string name="btn_update_ad">Save Ad</string>
+
+    <string name="msg_image_required">Image of the pet is required!</string>
+    <string name="msg_image_is_processing">Image of the pet is being processed! Please, wait a
+        moment!</string>
+    <string name="msg_image_is_processed">Image of the pet has been processed successfully!</string>
+    <string name="msg_status_required">State is required!</string>
+    <string name="msg_reward_required">Reward is required!</string>
+    <string name="msg_reward_invalid">Reward is invalid!</string>
+    <string name="msg_date_required">Date of disappearance of the pet is required!</string>
+    <string name="msg_time_required">Time of disappearance of the pet is required!</string>
+    <string name="msg_date_and_time_before">Moment of disappearance of the pet has to be before
+        now!</string>
+    The moment of the pet's disappearance has to be before the current moment!
+    <string name="msg_last_spotted_location_required">The location of the disappearance of the
+        pet is required!</string>
+    <string name="msg_remarks_required">The remarks are required!</string>
+    <string name="msg_name_required">Pet name is required!</string>
+    <string name="msg_type_required">Pet type is required!</string>
+    <string name="msg_race_required">Pet race is required!</string>
+    <string name="msg_sex_required">Pet sex is required!</string>
+    <string name="msg_colour_required">Pet colour is required!</string>
+    <string name="msg_microchip_id_required">Pet microchipd (ID) is required!</string>
+    <string name="msg_new_ad_added">Ad of the lost pet has been published!</string>
+    <string name="msg_ad_updated">¡Ad of the lost pet has been updated!</string>
+
+    <string name="pref_language_spanish">Spanish</string>
+    <string name="pref_language_english">English</string>
+</resources>

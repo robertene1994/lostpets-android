@@ -1,0 +1,79 @@
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        gradlePluginPortal()
+        maven { url "https://jitpack.io" }
+        maven { url "https://maven.google.com" }
+        maven { url "https://plugins.gradle.org/m2/" }
+
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:3.6.2"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.71"
+        classpath "org.jlleitschuh.gradle:ktlint-gradle:9.2.1"
+        classpath("com.android.tools:r8:1.6.84") { transitive false }
+        classpath "org.jetbrains.dokka:dokka-gradle-plugin:0.10.1"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        gradlePluginPortal()
+        maven { url "https://jitpack.io" }
+        maven { url "https://maven.google.com" }
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+}
+
+subprojects {
+    apply plugin: "org.jlleitschuh.gradle.ktlint"
+
+    ktlint { debug = true }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    minSdkVersion = 26
+    targetSdkVersion = 27
+    compileSdkVersion = 28
+    buildToolsVersion = '28.0.3'
+
+    // Kotlin
+    kotlinVersion = '1.3.61'
+
+    // Anko
+    ankoVersion = '0.10.8'
+
+    // Android
+    supportLibraryVersion = '27.1.1'
+    constraintLayoutVersion = '1.1.3'
+
+    // Local Unit Tests
+    junitVersion = '4.12'
+    mockitoVersion = '2.8.9'
+    okhttpMockVersion = '3.8.0'
+    robolectricVersion = '3.3.2'
+
+    // Networking
+    retrofitVersion = '2.4.0'
+
+    // Photos
+    picassoVersion = '2.71828'
+
+    // Google Maps
+    googleMapsVersion = '16.1.0'
+
+    // JSON
+    gsonVersion = '2.8.2'
+
+    // Messaging
+    stompVersion = '1.6.4'
+    rxJavaVersion = '2.2.5'
+    rxAndroidVersion = '2.1.0'
+}

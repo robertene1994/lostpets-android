@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginBottom="0dp"
+    android:theme="@style/LostPetsTheme"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    card_view:cardBackgroundColor="@color/colorSecondaryText"
+    card_view:cardCornerRadius="10dp"
+    card_view:cardElevation="10dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/chatConstraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/userChatImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_marginBottom="0dp"
+            android:contentDescription="@string/cont_desc_user_chat"
+            android:src="@drawable/ic_user_account"
+            android:tint="@color/colorAccent"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/userChatNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="18sp"
+            app:layout_constraintTop_toTopOf="parent"
+            card_view:layout_constraintStart_toEndOf="@+id/userChatImageView" />
+
+        <ImageView
+            android:id="@+id/userChatLastMessageStatusImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tint="@color/colorAccent"
+            android:visibility="gone"
+            android:contentDescription="@string/cont_desc_card_chat_item_last_message_status"
+            app:layout_constraintBottom_toBottomOf="@+id/userChatLastMessageTextView"
+            app:layout_constraintEnd_toStartOf="@+id/userChatLastMessageTextView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/userChatImageView"
+            app:layout_constraintTop_toTopOf="@+id/userChatLastMessageTextView"
+            app:srcCompat="@drawable/ic_up" />
+
+        <TextView
+            android:id="@+id/userChatLastMessageTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="sans-serif"
+            android:padding="2dp"
+            android:singleLine="true"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/userChatLastMessageStatusImageView"
+            card_view:layout_constraintEnd_toStartOf="@+id/userChatUnreadMessagesTextView"
+            card_view:layout_constraintTop_toBottomOf="@+id/userChatNameTextView" />
+
+        <TextView
+            android:id="@+id/userChatLastMessageTimeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="sans-serif"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/userChatUnreadMessagesTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/unread_messages_textview_rounded_corner"
+            android:fontFamily="sans-serif"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:paddingLeft="2dp"
+            android:paddingTop="1dp"
+            android:paddingRight="2dp"
+            android:paddingBottom="1dp"
+            android:textColor="@color/colorSecondaryText"
+            android:textStyle="bold"
+            android:visibility="gone"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toEndOf="@+id/userChatLastMessageTextView"
+            card_view:layout_constraintTop_toBottomOf="@+id/userChatLastMessageTimeTextView" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>

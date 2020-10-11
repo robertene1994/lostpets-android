@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="LostPetsTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/colorPrimaryText</item>
+        <item name="toolbarNavigationButtonStyle">@color/colorPrimary</item>
+        <item name="cardViewStyle">@style/CardView</item>
+    </style>
+
+    <style name="LostPetsTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="coordinatorLayoutStyle">@style/Widget.Design.CoordinatorLayout</item>
+    </style>
+
+    <style name="LostPetsTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="LostPetsTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+        <item name="toolbarStyle">@style/Widget.AppCompat.Toolbar</item>
+    </style>
+
+    <style name="ButtonSecondary" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+
+    <style name="LostPetsTheme.ErrorTextAppearance" parent="TextAppearance.Design.Error">
+        <item name="android:textColor">@color/colorDanger</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light" />
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+</resources>

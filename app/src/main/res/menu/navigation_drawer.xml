@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/adOptionsGroup"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/adsNavItem"
+            android:icon="@drawable/ic_menu_ads"
+            android:title="@string/nav_ads" />
+        <item
+            android:id="@+id/userAdsNavItem"
+            android:icon="@drawable/ic_menu_user_ads"
+            android:title="@string/nav_user_ads" />
+        <item
+            android:id="@+id/addAdNavItem"
+            android:icon="@drawable/ic_menu_add_ad"
+            android:title="@string/nav_add_ad" />
+        <item
+            android:id="@+id/userChatsNavItem"
+            android:icon="@drawable/ic_menu_user_chats"
+            android:title="@string/nav_user_chats" />
+        <item
+            android:id="@+id/settingsNavItem"
+            android:icon="@drawable/ic_menu_settings"
+            android:title="@string/nav_settings" />
+    </group>
+    <group
+        android:id="@+id/logoutOptionsGroup"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/logoutNavItem"
+            android:icon="@drawable/ic_menu_logout"
+            android:title="@string/nav_logout" />
+    </group>
+</menu>
