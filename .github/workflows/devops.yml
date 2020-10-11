@@ -42,18 +42,18 @@ jobs:
           java-version: 1.8
 
       - name: Kotlin Lint 🚨
-        run: gradlew ktlintCheck
+        run: ./gradlew ktlintCheck
 
       - name: Android Lint 🤖
-        run: gradlew lint
+        run: ./gradlew lint
 
       - name: Test 🧪
-        run: gradlew test
+        run: ./gradlew test
         env:
           GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
 
       - name: Assemble ⚒️
-        run: gradlew assemble
+        run: ./gradlew assemble
         env:
           GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
 
@@ -64,7 +64,7 @@ jobs:
           path: app/build/outputs/apk/releaseHeroku/app-releaseHeroku-unsigned.apk
 
       - name: Build documentation 📖
-        run: gradlew dokka
+        run: ./gradlew dokka
 
       - name: Archive documentation 📚
         uses: actions/upload-artifact@v2
