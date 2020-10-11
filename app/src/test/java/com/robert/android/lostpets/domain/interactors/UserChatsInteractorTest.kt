@@ -39,7 +39,7 @@ import org.mockito.junit.MockitoJUnitRunner
 class UserChatsInteractorTest {
 
     private companion object {
-        const val SERVER_PORT = 1000
+        const val SERVER_PORT = 64395
         const val RESPONSE_TIMEOUT = 3000L
     }
 
