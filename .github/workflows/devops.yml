@@ -49,15 +49,13 @@ jobs:
 
       - name: Test 🧪
         run: ./gradlew test
-        env:
-          GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
 
       - name: Assemble ⚒️
         run: ./gradlew assemble
         env:
           GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
 
-      - name: Archive build 📚
+      - name: Archive APK 📚
         uses: actions/upload-artifact@v2
         with:
           name: LostPets-Android

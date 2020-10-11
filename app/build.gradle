@@ -52,17 +52,6 @@ android {
             testProguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguardTest-rules.pro'
         }
 
-        debugEmulator {
-            testCoverageEnabled true
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            testProguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguardTest-rules.pro'
-
-            // Development Endpoint (localhost alternative for Android Emulator (AVD))
-            buildConfigField('String', 'LOST_PETS_API', '"http://10.0.2.2:8080/"')
-            buildConfigField('String', 'LOST_PETS_MESSAGING', '"ws://10.0.2.2:8080/lostpets-ws/websocket"')
-        }
-
         releaseAws {
             testCoverageEnabled false
             minifyEnabled true
