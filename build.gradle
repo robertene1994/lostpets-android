@@ -14,6 +14,7 @@ buildscript {
         classpath "org.jlleitschuh.gradle:ktlint-gradle:9.2.1"
         classpath("com.android.tools:r8:1.6.84") { transitive false }
         classpath "org.jetbrains.dokka:dokka-gradle-plugin:0.10.1"
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.0"
     }
 }
 
