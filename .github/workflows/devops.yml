@@ -6,27 +6,21 @@ on:
       - master
 
 jobs:
-#  code-analysis:
-#    name: Code analysis 🔍
-#    runs-on: ubuntu-latest
-#
-#    steps:
-#      - name: Repository checkout 🛎️
-#        uses: actions/checkout@v2
-#        with:
-#          fetch-depth: 0
-#
-#      - name: Use JDK 11 ⚙️
-#        uses: actions/setup-java@v1
-#        with:
-#          java-version: 11
-#
-#      - name: SonarCloud scan 🔎
-#        run: mvn verify sonar:sonar -DskipTests
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#          JASYPT_ENCRYPTOR_PASSWORD: ${{ secrets.JASYPT_ENCRYPTOR_PASSWORD }}
-#          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+  code-analysis:
+    name: Code analysis 🔍
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repository checkout 🛎️
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: SonarCloud scan 🔎
+        uses: sonarsource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   build-and-test:
     name: Build and test ⚙️
