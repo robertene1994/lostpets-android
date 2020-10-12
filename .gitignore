@@ -20,9 +20,11 @@
 # Android Studio
 *.iml
 /.idea/libraries
+/.idea/sonarlint/
 /.idea/modules.xml
 /.idea/workspace.xml
 .gradle
 
 #NDK
 obj/
+
