@@ -15,6 +15,7 @@ buildscript {
         classpath("com.android.tools:r8:1.6.84") { transitive false }
         classpath "org.jetbrains.dokka:dokka-gradle-plugin:0.10.1"
         classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.0"
+        classpath "org.jacoco:org.jacoco.core:0.8.6"
     }
 }
 
@@ -33,10 +34,6 @@ subprojects {
     apply plugin: "org.jlleitschuh.gradle.ktlint"
 
     ktlint { debug = true }
-}
-
-task clean(type: Delete) {
-    delete rootProject.buildDir
 }
 
 ext {
@@ -77,4 +74,11 @@ ext {
     stompVersion = '1.6.4'
     rxJavaVersion = '2.2.5'
     rxAndroidVersion = '2.1.0'
+
+    // Jacoco
+    jacocoVersion = '0.8.6'
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }

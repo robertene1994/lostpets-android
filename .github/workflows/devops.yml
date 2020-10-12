@@ -16,7 +16,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Use JDK 11 ⚙️
+      - name: Use JDK 11 ⚙
         uses: actions/setup-java@v1
         with:
           java-version: 11
@@ -28,14 +28,14 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   build-and-test:
-    name: Build and test ⚙️
+    name: Build and test ⚙
     runs-on: ubuntu-latest
 
     steps:
       - name: Repository checkout 🛎️
         uses: actions/checkout@v2
 
-      - name: Use JDK 1.8 ⚙️
+      - name: Use JDK 1.8 ⚙
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
@@ -49,7 +49,7 @@ jobs:
       - name: Test 🧪
         run: ./gradlew test
 
-      - name: Assemble ⚒️
+      - name: Assemble ⚒
         run: ./gradlew assemble
         env:
           GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
@@ -69,8 +69,11 @@ jobs:
           name: documentation
           path: app/build/kdoc
 
-      - name: Archive reports 📚
+      - name: Build code coverage ☂
+        run: ./gradlew jacocoTestReport
+
+      - name: Archive code coverage result 📚
         uses: actions/upload-artifact@v2
         with:
-          name: reports
-          path: app/build/reports
+          name: code-coverage
+          path: app/build/reports/rep/jacocoTestReport
