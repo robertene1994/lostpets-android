@@ -23,7 +23,7 @@ android {
             property "sonar.projectKey", "robertene1994_lostpets-android"
             property "sonar.host.url", "https://sonarcloud.io"
             property "sonar.projectVersion", "1.0.0"
-            property 'sonar.coverage.jacoco.xmlReportPaths', "$buildDir/reports/rep/jacocoTestReport/jacocoTestReport.xml"
+            property 'sonar.coverage.jacoco.xmlReportPaths', "$projectDir/jacocoTestReport/jacocoTestReport.xml"
             property "sonar.exclusions", "**/*.xml"
         }
     }

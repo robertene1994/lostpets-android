@@ -24,7 +24,7 @@ jobs:
       - name: Test 🧪
         run: ./gradlew testDebugUnitTest
 
-      - name: Build code coverage ☂
+      - name: Code coverage ☂
         run: ./gradlew jacocoTestReport
 
       - name: SonarCloud scan 🔎
@@ -75,7 +75,7 @@ jobs:
           name: documentation
           path: app/build/kdoc
 
-      - name: Build code coverage ☂
+      - name: Code coverage ☂
         run: ./gradlew jacocoTestReport
 
       - name: Archive code coverage result 📚
