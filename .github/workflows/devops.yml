@@ -21,12 +21,6 @@ jobs:
         with:
           java-version: 11
 
-      - name: Test 🧪
-        run: ./gradlew testDebugUnitTest
-
-      - name: Code coverage ☂
-        run: ./gradlew jacocoTestReport
-
       - name: SonarCloud scan 🔎
         run: ./gradlew sonarqube
         env:
