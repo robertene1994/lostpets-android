@@ -8,6 +8,7 @@
 
 # other generated files
 /build
+/keystore
 /captures
 .externalNativeBuild
 
@@ -27,4 +28,3 @@
 
 #NDK
 obj/
-

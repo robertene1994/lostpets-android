@@ -6,6 +6,7 @@ apply plugin: 'org.jetbrains.dokka'
 apply plugin: 'org.sonarqube'
 apply from: '../jacoco.gradle'
 
+
 android {
     lintOptions {
         disable 'GradleDependency', 'GradleCompatible'
@@ -28,6 +29,23 @@ android {
         }
     }
 
+    // Load local properties file
+    def props = new Properties()
+    try {
+        props.load(project.rootProject.file("local.properties").newDataInputStream())
+    } catch (ignored) {
+        println 'Local properties file not found. Using environment variables.'
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("$rootProject.projectDir.path\\${!props.isEmpty() ? props.getProperty("signingKeyFile") : System.getenv("SIGNING_KEY_FILE")}")
+            keyAlias !props.isEmpty() ? props.getProperty("keyAlias") : System.getenv("KEY_ALIAS")
+            storePassword !props.isEmpty() ? props.getProperty("storePassword") : System.getenv ("STORE_PASSWORD")
+            keyPassword !props.isEmpty() ? props.getProperty("keyPassword") : System.getenv("KEY_PASSWORD")
+        }
+    }
+
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
 
@@ -40,7 +58,7 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         // Google Maps API
-        manifestPlaceholders = [GOOGLE_MAPS_API_KEY: "${System.getenv("GOOGLE_MAPS_API_KEY")}"]
+        manifestPlaceholders = [GOOGLE_MAPS_API_KEY: "${!props.isEmpty() ? props.getProperty("googleMapsApiKey") : System.getenv("GOOGLE_MAPS_API_KEY")}"]
 
         // Generic Endpoint
         buildConfigField('String', 'LOST_PETS_USER_TOPIC', '"/exchange/chatMessage/userEmail"')
@@ -72,9 +90,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             testProguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguardTest-rules.pro'
+            signingConfig signingConfigs.debug
         }
 
         debugEmulator {
+            debuggable = true
             testCoverageEnabled true
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -83,6 +103,7 @@ android {
             // Development Endpoint (localhost alternative for Android Emulator (AVD))
             buildConfigField('String', 'LOST_PETS_API', '"http://10.0.2.2:8080/"')
             buildConfigField('String', 'LOST_PETS_MESSAGING', '"ws://10.0.2.2:8080/lostpets-ws/websocket"')
+            signingConfig signingConfigs.debug
         }
 
         releaseAws {
@@ -94,6 +115,7 @@ android {
             // Production Endpoint (AWS)
             buildConfigField('String', 'LOST_PETS_API', '"http://ec2-3-236-13-135.compute-1.amazonaws.com:8080/LostPets/"')
             buildConfigField('String', 'LOST_PETS_MESSAGING', '"ws://ec2-3-236-13-135.compute-1.amazonaws.com:8080/LostPets/lostpets-ws/websocket"')
+            signingConfig signingConfigs.release
         }
 
         releaseHeroku {
@@ -105,6 +127,7 @@ android {
             // Production Endpoint (Heroku)
             buildConfigField('String', 'LOST_PETS_API', '"https://lostpets-back-end.herokuapp.com/"')
             buildConfigField('String', 'LOST_PETS_MESSAGING', '"wss://lostpets-back-end.herokuapp.com/lostpets-ws/websocket"')
+            signingConfig signingConfigs.release
         }
     }
 
