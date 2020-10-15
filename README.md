@@ -16,9 +16,9 @@
   
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=robertene1994_lostpets-android&metric=bugs)](https://sonarcloud.io/dashboard?id=robertene1994_lostpets-android) [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=robertene1994_lostpets-android&metric=code_smells)](https://sonarcloud.io/dashboard?id=robertene1994_lostpets-android) [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=robertene1994_lostpets-android&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=robertene1994_lostpets-android)  
   
-#### Continuous Integration ☁️  
+#### CI/CD ☁
   
-[![CI/CD](https://github.com/robertene1994/lostpets-android/workflows/DevOps%20(CI/CD)%20%E2%98%81%EF%B8%8F/badge.svg)](https://github.com/robertene1994/lostpets-android/actions?query=workflow%3A%22DevOps+%28CI%2FCD%29+%E2%98%81%EF%B8%8F%22)   
+[![CI](hhttps://github.com/robertene1994/lostpets-android/workflows/CI%20%F0%9F%94%84/badge.svg)](https://github.com/robertene1994/lostpets-android/actions?query=workflow%3A%22CI%20%F0%9F%94%84) [![CD](https://github.com/robertene1994/lostpets-android/workflows/CD%20%F0%9F%9A%80/badge.svg)](https://github.com/robertene1994/lostpets-android/actions?query=workflow%3A%22CD%20%F0%9F%9A%80)
   
 ## Installation 🔧  
   
