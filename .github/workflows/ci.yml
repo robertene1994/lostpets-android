@@ -1,0 +1,72 @@
+name: CI 🔄
+
+on:
+  push:
+    branches:
+      - dev
+  pull_request:
+    types: closed
+    branches:
+      - master
+
+jobs:
+  build-and-test:
+    name: Build and test ⚙
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repository checkout 🛎️
+        uses: actions/checkout@v2
+
+      - name: Use JDK 1.8 ⚙
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+
+      - name: Kotlin Lint 🚨
+        run: ./gradlew ktlintCheck
+
+      - name: Android Lint 🤖
+        run: ./gradlew lint
+
+      - name: Test 🧪
+        run: ./gradlew test
+
+      - name: Build documentation 📖
+        run: ./gradlew dokka
+
+      - name: Archive documentation 📚
+        uses: actions/upload-artifact@v2
+        with:
+          name: documentation
+          path: app/build/kdoc
+
+      - name: Code coverage ☂
+        run: ./gradlew jacocoTestReport
+
+      - name: Archive code coverage result 📚
+        uses: actions/upload-artifact@v2
+        with:
+          name: code-coverage
+          path: app/build/reports/rep/jacocoTestReport
+
+  code-analysis:
+    name: Code analysis 🔍
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repository checkout 🛎️
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Use JDK 11 ⚙
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
+
+      - name: SonarCloud scan 🔎
+        run: ./gradlew sonarqube
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
