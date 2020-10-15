@@ -1,4 +1,4 @@
-name: CI 🔄
+name: DevOps (CI)
 
 on:
   push:

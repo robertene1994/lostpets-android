@@ -1,4 +1,4 @@
-name: CD 🚀
+name: DevOps (CD)
 
 on:
   pull_request:
@@ -10,7 +10,6 @@ jobs:
   assemble:
     name: Assemble 🚀
     runs-on: ubuntu-latest
-    needs: build-and-test
 
     steps:
       - name: Repository checkout 🛎️
